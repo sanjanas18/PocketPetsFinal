@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://doeljg4o4r5td"]
+
+[ext_resource type="Texture2D" uid="uid://ckr5xtf7egmy3" path="res://temporaryart/peachbackground.jpeg" id="1_qoc63"]
+
+[node name="MainMenu" type="Node2D"]
+scale = Vector2(2.85322, 1.68952)
+
+[node name="Peachbackground" type="Sprite2D" parent="."]
+position = Vector2(202.593, 185.491)
+scale = Vector2(0.655197, 0.859504)
+texture = ExtResource("1_qoc63")
+
+[node name="Levels" type="Button" parent="."]
+offset_left = 131.0
+offset_top = 185.0
+offset_right = 227.0
+offset_bottom = 216.0
+text = "Sanctuary"
+
+[node name="Sanctuary" type="Button" parent="."]
+offset_left = 128.977
+offset_top = 137.317
+offset_right = 225.977
+offset_bottom = 168.317
+text = "Levels"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0.0470588, 0.0470588, 1)
+offset_left = 118.112
+offset_top = 46.7588
+offset_right = 280.112
+offset_bottom = 86.7588
+text = "Pocket Pets"
+scroll_active = false
