@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b331xo6qfnqgt"]
+[gd_scene load_steps=12 format=3 uid="uid://b331xo6qfnqgt"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_5xpyq"]
 [ext_resource type="Texture2D" uid="uid://cvb6sx0u50vhm" path="res://art/Mystic Woods Asset Pack/tilesets/plains.png" id="3_nkyxk"]
 [ext_resource type="Texture2D" uid="uid://ccwepghmbclx6" path="res://art/Mystic Woods Asset Pack/tilesets/fences.png" id="4_r7f3s"]
+[ext_resource type="PackedScene" uid="uid://bg5ii57p67r7i" path="res://Player.tscn" id="5_kjgnn"]
+[ext_resource type="Script" path="res://Player.gd" id="6_lj0xj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gaf4"]
 texture = ExtResource("1_lxs1e")
@@ -323,3 +325,8 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(0, 65539, 0, 1, 131075, 0)
+
+[node name="Player" parent="." instance=ExtResource("5_kjgnn")]
+position = Vector2(233, 151)
+scale = Vector2(4.24, 4.88)
+script = ExtResource("6_lj0xj")
