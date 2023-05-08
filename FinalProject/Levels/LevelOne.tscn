@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b331xo6qfnqgt"]
+[gd_scene load_steps=13 format=3 uid="uid://b331xo6qfnqgt"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_5xpyq"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ccwepghmbclx6" path="res://art/Mystic Woods Asset Pack/tilesets/fences.png" id="4_r7f3s"]
 [ext_resource type="PackedScene" uid="uid://bg5ii57p67r7i" path="res://Player.tscn" id="5_kjgnn"]
 [ext_resource type="Script" path="res://Player.gd" id="6_lj0xj"]
+[ext_resource type="PackedScene" uid="uid://wx5gqjh2jxcm" path="res://gem.tscn" id="7_l5qyd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -193,3 +194,7 @@ scale = Vector2(2.74558, 3.16)
 script = ExtResource("6_lj0xj")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="gem" parent="." instance=ExtResource("7_l5qyd")]
+position = Vector2(512, 167)
+scale = Vector2(0.342844, 0.276457)
