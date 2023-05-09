@@ -202,7 +202,7 @@ script = ExtResource("6_lj0xj")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="gem" parent="." instance=ExtResource("7_l5qyd")]
-position = Vector2(512, 167)
+position = Vector2(1146, 723)
 scale = Vector2(0.342844, 0.276457)
 
 [node name="Wall" type="StaticBody2D" parent="."]
@@ -218,9 +218,10 @@ position = Vector2(2.49976, -28.856)
 shape = SubResource("RectangleShape2D_d3ovr")
 
 [node name="Penguin" parent="." instance=ExtResource("9_6aadl")]
+position = Vector2(1158.16, -202.896)
 scale = Vector2(2.08004, 1.68)
 
 [node name="Cage" type="Sprite2D" parent="."]
-position = Vector2(634, 191)
+position = Vector2(1159.16, -201.896)
 scale = Vector2(0.160947, 0.124417)
 texture = ExtResource("10_jaji4")
