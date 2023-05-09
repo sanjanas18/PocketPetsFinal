@@ -15,4 +15,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	var wall = get_node("../Wall")
+	wall.queue_free()
 	self.queue_free()
+	
