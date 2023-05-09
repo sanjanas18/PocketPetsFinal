@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b331xo6qfnqgt"]
+[gd_scene load_steps=16 format=3 uid="uid://b331xo6qfnqgt"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_5xpyq"]
@@ -8,11 +8,7 @@
 [ext_resource type="Script" path="res://Player.gd" id="6_lj0xj"]
 [ext_resource type="PackedScene" uid="uid://wx5gqjh2jxcm" path="res://gem.tscn" id="7_l5qyd"]
 [ext_resource type="Texture2D" uid="uid://cwlsm7fgev6ls" path="res://image-removebg-preview - 2023-05-08T124146.033.png" id="8_2uy5i"]
-[ext_resource type="Script" path="res://Levels/Penguin.gd" id="9_qf7xi"]
-[ext_resource type="Texture2D" uid="uid://defecegvaoikb" path="res://art/AnimalsIdrew/Penguin/Idle/tile000.png" id="9_u1diw"]
-[ext_resource type="Texture2D" uid="uid://dpsjntwi8uui7" path="res://art/AnimalsIdrew/Penguin/Idle/tile001.png" id="10_guhwv"]
-[ext_resource type="Texture2D" uid="uid://ccaymltxvtem8" path="res://art/AnimalsIdrew/Penguin/Idle/tile002.png" id="11_5eaih"]
-[ext_resource type="Texture2D" uid="uid://eb075gaexbv6" path="res://art/AnimalsIdrew/Penguin/Idle/tile003.png" id="12_7fgvx"]
+[ext_resource type="PackedScene" uid="uid://cybd5q3xhlmwm" path="res://penguin.tscn" id="9_6aadl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -175,31 +171,6 @@ sources/3 = SubResource("TileSetAtlasSource_nsdnf")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ovr"]
 size = Vector2(357, 112.288)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lb4ad"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_u1diw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_guhwv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_5eaih")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_7fgvx")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_y4rba"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6hd4x"]
-radius = 19.0
-
 [node name="LevelOne" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -245,22 +216,5 @@ texture = ExtResource("8_2uy5i")
 position = Vector2(2.49976, -28.856)
 shape = SubResource("RectangleShape2D_d3ovr")
 
-[node name="Penguin" type="CharacterBody2D" parent="."]
-position = Vector2(633, 190)
-script = ExtResource("9_qf7xi")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Penguin"]
-sprite_frames = SubResource("SpriteFrames_lb4ad")
-animation = &"idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Penguin"]
-shape = SubResource("CircleShape2D_y4rba")
-disabled = true
-
-[node name="Area2D" type="Area2D" parent="Penguin"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Penguin/Area2D"]
-scale = Vector2(1, 1.11999)
-shape = SubResource("CircleShape2D_6hd4x")
-
-[connection signal="body_entered" from="Penguin/Area2D" to="Penguin" method="_on_area_2d_body_entered"]
+[node name="Penguin" parent="." instance=ExtResource("9_6aadl")]
+scale = Vector2(2.08004, 1.68)

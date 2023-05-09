@@ -5,19 +5,23 @@ var tracking = false
 
 
 func ready(delta):
-	#$AnimatedSprite2D.play("idle")
+	$AnimatedSprite2D.play("idle")
 	pass   
 
 func _physics_process(delta):
 	if tracking == false:
-		pass
+		$AnimatedSprite2D.play("idle")
 	if tracking == true:
 		track()
 
 
 func _on_area_2d_body_entered(body):
-	print("hit")# Replace with function body.
-	tracking  = true
+	
+	print("hit")
+	if Input.is_action_pressed("XKEY"):
+		tracking = true
+		print("in tracking")
+		
 	
 func track():
 	var player = get_node("../Player")
