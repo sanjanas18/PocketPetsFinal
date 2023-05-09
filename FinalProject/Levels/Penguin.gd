@@ -1,26 +1,38 @@
 extends CharacterBody2D
 
 var tracking = false
+var disabled = false
 
 
 
 func ready(delta):
 	$AnimatedSprite2D.play("idle")
-	pass   
+	$Collider.disabled = false   
 
 func _physics_process(delta):
 	if tracking == false:
 		$AnimatedSprite2D.play("idle")
-	if tracking == true:
+	elif tracking == true:
 		track()
+	if disabled == true:
+		disablecollider()
+		
+	
+	
 
 
 func _on_area_2d_body_entered(body):
-	
-	print("hit")
-	if Input.is_action_pressed("XKEY"):
+	if body.is_in_group("Player"):
+		var cage = get_node("../Cage")
+		print("hit")
+		cage.hide()
 		tracking = true
 		print("in tracking")
+		disabled = true
+		
+		
+		
+			
 		
 	
 func track():
@@ -29,4 +41,7 @@ func track():
 	position += (player.position - position)/50
 	
 	move_and_collide(motion)
+	
+func disablecollider():
+	$Collider.disabled = true
 	
