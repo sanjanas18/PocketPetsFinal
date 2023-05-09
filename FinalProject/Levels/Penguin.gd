@@ -29,8 +29,8 @@ func _on_area_2d_body_entered(body):
 		tracking = true
 		print("in tracking")
 		disabled = true
-		Globals.characteraray.append("Penguin")
-		print(Globals.characteraray)
+		
+		
 		
 		
 		
