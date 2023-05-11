@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bg5ii57p67r7i"]
+[gd_scene load_steps=24 format=3 uid="uid://bg5ii57p67r7i"]
 
+[ext_resource type="Script" path="res://Player.gd" id="1_4il6o"]
 [ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="1_17ypy"]
 [ext_resource type="Texture2D" uid="uid://xm54cq3t7nl" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile000.png" id="1_esats"]
 [ext_resource type="Texture2D" uid="uid://b8ahe02sp5xn5" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile000.png" id="1_so31y"]
@@ -25,6 +26,12 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_esats")
 }, {
+"duration": 1.8,
+"texture": ExtResource("2_rpvw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rpvw2")
+}, {
 "duration": 1.0,
 "texture": ExtResource("2_rpvw2")
 }, {
@@ -32,6 +39,12 @@ animations = [{
 "texture": ExtResource("3_2w08l")
 }, {
 "duration": 1.0,
+"texture": ExtResource("3_2w08l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2w08l")
+}, {
+"duration": 1.8,
 "texture": ExtResource("4_ltnsu")
 }],
 "loop": true,
@@ -109,14 +122,14 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlnxw"]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4il6o")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -4.76837e-07)
 scale = Vector2(0.7, 0.633333)
 sprite_frames = SubResource("SpriteFrames_ylqck")
 animation = &"wolf_attack"
-frame = 1
-frame_progress = 0.647962
+frame_progress = 0.0654812
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")
@@ -134,3 +147,5 @@ shape = SubResource("CircleShape2D_oiveh")
 position = Vector2(-7, 0)
 scale = Vector2(-0.8932, 1.02683)
 shape = SubResource("CircleShape2D_xlnxw")
+
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

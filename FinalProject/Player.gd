@@ -22,6 +22,19 @@ func switch_to(new_state: State):
 	
 	if new_state == State.MOVE:
 		update_movement_animation()
+	elif new_state == State.IDLE:
+		$Sprite.play(character_to_use + "_idle")
+	elif new_state == State.ATTACK:
+		print("in attack mode")
+		$Sprite.frame = 0
+		if lastmovedir.x > 0:
+			$Sprite.play(character_to_use + "_attack")
+			#$Sprite.speed_scale = 0.5
+			$Sprite.flip_h = false
+		elif lastmovedir.x < 0:
+			$Sprite.play(character_to_use + "_attack")
+			#$Sprite.speed_scale = 0.5
+			$Sprite.flip_h = true
 		
 func update_movement_animation():
 	if curstate == State.MOVE:
@@ -37,10 +50,11 @@ func update_movement_animation():
 		elif lastmovedir.y < 0:
 			$Sprite.play(character_to_use + "_back")
 			$Sprite.flip_h = false
-	elif curstate == State.IDLE:
-		$Sprite.play(character_to_use + "_idle")
+	
+	
 
 func _physics_process(delta):
+	#print(curstate)
 	var dir = Vector2.ZERO
 	
 	# Setup a movement vector based on keyboard input
@@ -56,8 +70,12 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_right"):
 		dir.x = 1	
 		switch_to(State.MOVE)	
+	elif Input.is_action_just_pressed("ui_accept"):
+		switch_to(State.ATTACK)
 	else:
 		switch_to(State.IDLE)
+	
+
 		
 	# Apply that movement and save the last vectors as part of our state so we can select which
 	# animation to play layer
@@ -70,3 +88,14 @@ func _physics_process(delta):
 	update_movement_animation()
 
 	state_time += delta
+
+
+
+
+func _on_sprite_animation_finished():
+	if curstate == State.ATTACK:
+		print("reached here")
+		if lastdir.length() > 0:
+			switch_to(State.MOVE)
+		else:
+			switch_to(State.IDLE)

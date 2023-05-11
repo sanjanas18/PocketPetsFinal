@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b331xo6qfnqgt"]
+[gd_scene load_steps=20 format=3 uid="uid://b331xo6qfnqgt"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_5xpyq"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://ccwepghmbclx6" path="res://art/Mystic Woods Asset Pack/tilesets/fences.png" id="4_r7f3s"]
 [ext_resource type="PackedScene" uid="uid://bg5ii57p67r7i" path="res://Player.tscn" id="5_kjgnn"]
 [ext_resource type="Texture2D" uid="uid://cvb6sx0u50vhm" path="res://art/Mystic Woods Asset Pack/tilesets/plains.png" id="5_y7oun"]
-[ext_resource type="Script" path="res://Player.gd" id="6_lj0xj"]
 [ext_resource type="Texture2D" uid="uid://clrm7gv3c45pq" path="res://art/Mystic Woods Asset Pack/tilesets/water3.png" id="6_m733x"]
 [ext_resource type="PackedScene" uid="uid://wx5gqjh2jxcm" path="res://gem.tscn" id="7_l5qyd"]
 [ext_resource type="Texture2D" uid="uid://cwlsm7fgev6ls" path="res://image-removebg-preview - 2023-05-08T124146.033.png" id="8_2uy5i"]
@@ -444,7 +443,6 @@ layer_2/tile_data = PackedInt32Array(65559, 131073, 4, 131095, 131073, 4, 131096
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("5_kjgnn")]
 position = Vector2(143, 46)
 scale = Vector2(2.74558, 3.16)
-script = ExtResource("6_lj0xj")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
