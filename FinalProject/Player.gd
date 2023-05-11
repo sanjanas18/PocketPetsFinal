@@ -35,6 +35,8 @@ func switch_to(new_state: State):
 			$Sprite.play(character_to_use + "_attack")
 			#$Sprite.speed_scale = 0.5
 			$Sprite.flip_h = true
+		else:
+			$Sprite.play(character_to_use + "_attack")
 		
 func update_movement_animation():
 	if curstate == State.MOVE:
@@ -72,8 +74,7 @@ func _physics_process(delta):
 		switch_to(State.MOVE)	
 	elif Input.is_action_just_pressed("ui_accept"):
 		switch_to(State.ATTACK)
-	else:
-		switch_to(State.IDLE)
+	
 	
 
 		
@@ -93,9 +94,13 @@ func _physics_process(delta):
 
 
 func _on_sprite_animation_finished():
+	print("calling function after animation finished")
 	if curstate == State.ATTACK:
 		print("reached here")
 		if lastdir.length() > 0:
 			switch_to(State.MOVE)
 		else:
 			switch_to(State.IDLE)
+	if curstate == State.MOVE:
+		switch_to(State.IDLE)
+			

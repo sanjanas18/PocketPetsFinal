@@ -26,17 +26,11 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_esats")
 }, {
-"duration": 1.8,
-"texture": ExtResource("2_rpvw2")
-}, {
 "duration": 1.0,
 "texture": ExtResource("2_rpvw2")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_rpvw2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_2w08l")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_2w08l")
@@ -47,7 +41,7 @@ animations = [{
 "duration": 1.8,
 "texture": ExtResource("4_ltnsu")
 }],
-"loop": true,
+"loop": false,
 "name": &"wolf_attack",
 "speed": 5.0
 }, {
@@ -61,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_vgbsi")
 }],
-"loop": true,
+"loop": false,
 "name": &"wolf_back",
 "speed": 5.0
 }, {
@@ -75,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_osr2l")
 }],
-"loop": true,
+"loop": false,
 "name": &"wolf_front",
 "speed": 5.0
 }, {
@@ -109,7 +103,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_omkg1")
 }],
-"loop": true,
+"loop": false,
 "name": &"wolf_right",
 "speed": 5.0
 }]
@@ -129,7 +123,6 @@ position = Vector2(-1, -4.76837e-07)
 scale = Vector2(0.7, 0.633333)
 sprite_frames = SubResource("SpriteFrames_ylqck")
 animation = &"wolf_attack"
-frame_progress = 0.0654812
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")
