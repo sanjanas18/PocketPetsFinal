@@ -1,12 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://bg5ii57p67r7i"]
+[gd_scene load_steps=21 format=3 uid="uid://bg5ii57p67r7i"]
 
 [ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="1_17ypy"]
+[ext_resource type="Texture2D" uid="uid://xm54cq3t7nl" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile000.png" id="1_esats"]
 [ext_resource type="Texture2D" uid="uid://b8ahe02sp5xn5" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile000.png" id="1_so31y"]
 [ext_resource type="Texture2D" uid="uid://dw1uslm3fof20" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile001.png" id="2_18va0"]
 [ext_resource type="Texture2D" uid="uid://bs2ja0ed40xo7" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile001.png" id="2_il41q"]
+[ext_resource type="Texture2D" uid="uid://dgpq5e0ou47nh" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile001.png" id="2_rpvw2"]
 [ext_resource type="Texture2D" uid="uid://cjn0ftj43i8jk" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile002.png" id="3_1on4p"]
+[ext_resource type="Texture2D" uid="uid://dwt1oq31ojmsr" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile002.png" id="3_2w08l"]
 [ext_resource type="Texture2D" uid="uid://pb54pg7r3eku" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile002.png" id="3_vgbsi"]
 [ext_resource type="Texture2D" uid="uid://mog86x5qjlby" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile000.png" id="4_aeds7"]
+[ext_resource type="Texture2D" uid="uid://ix2kbony7k6s" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile003.png" id="4_ltnsu"]
 [ext_resource type="Texture2D" uid="uid://byhy246p7uxbf" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile003.png" id="4_mg6r1"]
 [ext_resource type="Texture2D" uid="uid://c3ctgats8cedw" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile000.png" id="5_8jdk2"]
 [ext_resource type="Texture2D" uid="uid://kg8x2aqn3ofq" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile001.png" id="5_jc00q"]
@@ -17,6 +21,23 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ylqck"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_esats")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rpvw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2w08l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ltnsu")
+}],
+"loop": true,
+"name": &"wolf_attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_so31y")
@@ -88,7 +109,9 @@ animations = [{
 position = Vector2(-1, -4.76837e-07)
 scale = Vector2(0.7, 0.633333)
 sprite_frames = SubResource("SpriteFrames_ylqck")
-animation = &"wolf_front"
+animation = &"wolf_attack"
+frame = 1
+frame_progress = 0.647962
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")
