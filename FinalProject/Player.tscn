@@ -111,7 +111,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ewdls"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oiveh"]
-radius = 8.0
+radius = 9.21053
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlnxw"]
 
@@ -127,18 +127,20 @@ animation = &"wolf_attack"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")
 
-[node name="Right" type="Area2D" parent="."]
+[node name="RightAttack" type="Area2D" parent="."]
 
-[node name="RightArea" type="CollisionShape2D" parent="Right"]
+[node name="RightArea" type="CollisionShape2D" parent="RightAttack"]
 position = Vector2(9, 0)
 scale = Vector2(0.76, 1)
 shape = SubResource("CircleShape2D_oiveh")
 
-[node name="Left" type="Area2D" parent="."]
+[node name="LeftAttack" type="Area2D" parent="."]
 
-[node name="LeftArea" type="CollisionShape2D" parent="Left"]
+[node name="LeftArea" type="CollisionShape2D" parent="LeftAttack"]
 position = Vector2(-7, 0)
 scale = Vector2(-0.8932, 1.02683)
 shape = SubResource("CircleShape2D_xlnxw")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
+[connection signal="body_entered" from="RightAttack" to="." method="_on_right_attack_body_entered"]
+[connection signal="body_entered" from="LeftAttack" to="." method="_on_left_attack_body_entered"]

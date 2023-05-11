@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2rmns61pqkjn"]
+
+[ext_resource type="PackedScene" uid="uid://b7q0ctwteq5t" path="res://Enemy.tscn" id="1_ci71a"]
+[ext_resource type="Script" path="res://enemy_one.gd" id="2_wkn7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3uakc"]
+size = Vector2(10, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxtin"]
+
+[node name="EnemyOne" instance=ExtResource("1_ci71a")]
+script = ExtResource("2_wkn7r")
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_3uakc")
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_fxtin")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

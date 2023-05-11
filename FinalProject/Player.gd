@@ -9,6 +9,8 @@ var state_time = 0.0
 var character_to_use = Globals.character_in_use
 
 func _ready():
+	$RightAttack.monitoring = false
+	$LeftAttack.monitoring = false
 	$Sprite.play(character_to_use + "_idle")
 	
 	
@@ -19,13 +21,15 @@ func _ready():
 func switch_to(new_state: State):
 	curstate = new_state
 	state_time = 0.0
-	
+	$RightAttack.monitoring = false
+	$LeftAttack.monitoring = false
 	if new_state == State.MOVE:
 		update_movement_animation()
 	elif new_state == State.IDLE:
 		$Sprite.play(character_to_use + "_idle")
 	elif new_state == State.ATTACK:
-		print("in attack mode")
+		$RightAttack.monitoring = true
+		$LeftAttack.monitoring = true
 		$Sprite.frame = 0
 		if lastmovedir.x > 0:
 			$Sprite.play(character_to_use + "_attack")
@@ -94,9 +98,9 @@ func _physics_process(delta):
 
 
 func _on_sprite_animation_finished():
-	print("calling function after animation finished")
+	#print("calling function after animation finished")
 	if curstate == State.ATTACK:
-		print("reached here")
+		#print("reached here")
 		if lastdir.length() > 0:
 			switch_to(State.MOVE)
 		else:
@@ -104,3 +108,24 @@ func _on_sprite_animation_finished():
 	if curstate == State.MOVE:
 		switch_to(State.IDLE)
 			
+
+
+
+
+func _on_right_attack_body_entered(body):
+	print("about to attack")
+	if curstate == State.ATTACK and body != self:
+		print("in attack mode by enemy")
+		if body is Enemy:
+			body.hit()
+
+
+
+
+
+func _on_left_attack_body_entered(body):
+	print("about to attack")
+	if curstate == State.ATTACK and body != self:
+		print("in attack mode by enemy")
+		if body is Enemy:
+			body.hit()
