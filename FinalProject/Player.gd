@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-enum State {IDLE, MOVE} #add attack SOON!
+enum State {IDLE, MOVE, ATTACK} #add attack SOON!
 var curstate = State.IDLE
 var speed = 5
 var lastmovedir: Vector2 = Vector2.ZERO
