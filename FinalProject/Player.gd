@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 enum State {IDLE, MOVE, ATTACK} #add attack SOON!
 var curstate = State.IDLE
@@ -39,8 +39,7 @@ func switch_to(new_state: State):
 			$Sprite.play(character_to_use + "_attack")
 			#$Sprite.speed_scale = 0.5
 			$Sprite.flip_h = true
-		else:
-			$Sprite.play(character_to_use + "_attack")
+		
 		
 func update_movement_animation():
 	if curstate == State.MOVE:
@@ -129,3 +128,4 @@ func _on_left_attack_body_entered(body):
 		print("in attack mode by enemy")
 		if body is Enemy:
 			body.hit()
+			
