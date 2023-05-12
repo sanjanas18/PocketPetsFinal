@@ -12,7 +12,7 @@ func hit():
 
 func _ready():
 	pass
-	#$AnimatedSprite2D.play("enemy_one_idle")
+	$AnimatedSprite2D.play("enemy_one_idle")
 	
 
 func switch_to(new_state: State):

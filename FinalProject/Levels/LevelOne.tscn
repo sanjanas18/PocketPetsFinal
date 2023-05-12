@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b331xo6qfnqgt"]
+[gd_scene load_steps=21 format=3 uid="uid://b331xo6qfnqgt"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_5xpyq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cwlsm7fgev6ls" path="res://image-removebg-preview - 2023-05-08T124146.033.png" id="8_2uy5i"]
 [ext_resource type="PackedScene" uid="uid://cybd5q3xhlmwm" path="res://penguin.tscn" id="9_6aadl"]
 [ext_resource type="Texture2D" uid="uid://btr53dxrvhrh5" path="res://art/Objects/image-removebg-preview - 2023-05-09T103236.695.png" id="10_jaji4"]
+[ext_resource type="PackedScene" uid="uid://d2rmns61pqkjn" path="res://enemy_one.tscn" id="12_a214w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -466,9 +467,13 @@ shape = SubResource("RectangleShape2D_d3ovr")
 
 [node name="Penguin" parent="." instance=ExtResource("9_6aadl")]
 position = Vector2(1158.16, -202.896)
-scale = Vector2(2.08004, 1.68)
+scale = Vector2(2.64002, 2.52)
 
 [node name="Cage" type="Sprite2D" parent="."]
 position = Vector2(1159.16, -201.896)
-scale = Vector2(0.160947, 0.124417)
+scale = Vector2(0.224138, 0.198524)
 texture = ExtResource("10_jaji4")
+
+[node name="EnemyOne" parent="." instance=ExtResource("12_a214w")]
+position = Vector2(495, 174)
+scale = Vector2(0.29065, 0.265104)

@@ -30,15 +30,9 @@ animations = [{
 "texture": ExtResource("2_rpvw2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_rpvw2")
-}, {
-"duration": 1.0,
 "texture": ExtResource("3_2w08l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_2w08l")
-}, {
-"duration": 1.8,
 "texture": ExtResource("4_ltnsu")
 }],
 "loop": false,
@@ -54,8 +48,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_vgbsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_so31y")
 }],
-"loop": false,
+"loop": true,
 "name": &"wolf_back",
 "speed": 5.0
 }, {
@@ -68,6 +65,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_osr2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aeds7")
 }],
 "loop": false,
 "name": &"wolf_front",
@@ -85,6 +85,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_mg6r1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_17ypy")
 }],
 "loop": true,
 "name": &"wolf_idle",
@@ -102,8 +105,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_omkg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8jdk2")
 }],
-"loop": false,
+"loop": true,
 "name": &"wolf_right",
 "speed": 5.0
 }]
@@ -122,7 +128,7 @@ script = ExtResource("1_4il6o")
 position = Vector2(-1, -4.76837e-07)
 scale = Vector2(0.7, 0.633333)
 sprite_frames = SubResource("SpriteFrames_ylqck")
-animation = &"wolf_attack"
+animation = &"wolf_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")

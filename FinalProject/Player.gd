@@ -39,6 +39,8 @@ func switch_to(new_state: State):
 			$Sprite.play(character_to_use + "_attack")
 			#$Sprite.speed_scale = 0.5
 			$Sprite.flip_h = true
+		else:
+			$Sprite.play(character_to_use + "_attack")
 		
 		
 func update_movement_animation():
