@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://doeljg4o4r5td"]
+[gd_scene load_steps=3 format=3 uid="uid://doeljg4o4r5td"]
 
 [ext_resource type="Texture2D" uid="uid://ckr5xtf7egmy3" path="res://temporaryart/peachbackground.jpeg" id="1_qoc63"]
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_vl4bd"]
 
 [node name="MainMenu" type="Node2D"]
 scale = Vector2(2.85322, 1.68952)
+script = ExtResource("1_vl4bd")
 
 [node name="Peachbackground" type="Sprite2D" parent="."]
 position = Vector2(202.593, 185.491)
@@ -32,3 +34,5 @@ offset_right = 280.112
 offset_bottom = 86.7588
 text = "Pocket Pets"
 scroll_active = false
+
+[connection signal="pressed" from="Sanctuary" to="." method="_on_sanctuary_pressed"]
