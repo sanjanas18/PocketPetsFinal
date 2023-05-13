@@ -21,9 +21,19 @@ func _process(delta):
 
 func _on_wolf_equip_pressed():
 	Globals.character_in_use = "wolf" # Replace with function body.
-
+	$EquipText.text = "The Wolf is Equipped"
+	$EquipClose.show()
+	$EquipText.show()
+	$EquipScreen.show()
 
 func _on_levels_pressed():
 	
 	get_tree().change_scene_to_file("res://Levels/LevelOne.tscn")
 	
+
+
+func _on_equip_close_pressed():
+	$EquipClose.hide()
+	$EquipText.hide()
+	$EquipScreen.hide()
+
