@@ -10,14 +10,14 @@ position = Vector2(202.593, 185.491)
 scale = Vector2(0.655197, 0.859504)
 texture = ExtResource("1_qoc63")
 
-[node name="Levels" type="Button" parent="."]
+[node name="Sanctuary" type="Button" parent="."]
 offset_left = 131.0
 offset_top = 185.0
 offset_right = 227.0
 offset_bottom = 216.0
 text = "Sanctuary"
 
-[node name="Sanctuary" type="Button" parent="."]
+[node name="Levels" type="Button" parent="."]
 offset_left = 128.977
 offset_top = 137.317
 offset_right = 225.977

@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://cd0d7bky84v8d"]
+
+[ext_resource type="Script" path="res://Sanctuary.gd" id="1_gwgc8"]
+[ext_resource type="Texture2D" uid="uid://ce5cncng30eea" path="res://art/Objects/backgroundshelf.jpeg" id="1_y75x2"]
+[ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="2_eppea"]
+[ext_resource type="Texture2D" uid="uid://bs2ja0ed40xo7" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile001.png" id="3_1xf5t"]
+[ext_resource type="Texture2D" uid="uid://cjn0ftj43i8jk" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile002.png" id="4_r8vj3"]
+[ext_resource type="Texture2D" uid="uid://byhy246p7uxbf" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile003.png" id="5_yea8f"]
+[ext_resource type="Texture2D" uid="uid://defecegvaoikb" path="res://art/AnimalsIdrew/Penguin/Idle/tile000.png" id="6_df4ne"]
+[ext_resource type="Texture2D" uid="uid://dpsjntwi8uui7" path="res://art/AnimalsIdrew/Penguin/Idle/tile001.png" id="7_22kk8"]
+[ext_resource type="Texture2D" uid="uid://ccaymltxvtem8" path="res://art/AnimalsIdrew/Penguin/Idle/tile002.png" id="8_0tv5g"]
+[ext_resource type="Texture2D" uid="uid://eb075gaexbv6" path="res://art/AnimalsIdrew/Penguin/Idle/tile003.png" id="9_65bdq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rdrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eppea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1xf5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r8vj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yea8f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eo0y0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_df4ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_22kk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0tv5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_65bdq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Sanctuary" type="Node2D"]
+script = ExtResource("1_gwgc8")
+
+[node name="Backgroundshelf" type="Sprite2D" parent="."]
+position = Vector2(579.75, 327.25)
+scale = Vector2(2.08409, 2.09486)
+texture = ExtResource("1_y75x2")
+
+[node name="Wolf" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(309, 226)
+scale = Vector2(5.63333, 6.03333)
+sprite_frames = SubResource("SpriteFrames_8rdrn")
+animation = &"idle"
+
+[node name="Penguin" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(742, 224)
+scale = Vector2(5.23333, 5.23333)
+sprite_frames = SubResource("SpriteFrames_eo0y0")
+animation = &"idle"
