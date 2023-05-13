@@ -66,9 +66,27 @@ scale = Vector2(5.63333, 6.03333)
 sprite_frames = SubResource("SpriteFrames_8rdrn")
 animation = &"idle"
 
+[node name="Wolf Equip" type="Button" parent="Wolf"]
+offset_left = -12.0
+offset_top = 15.0
+offset_right = 40.0
+offset_bottom = 46.0
+scale = Vector2(0.497241, 0.215439)
+text = "Equip"
+
 [node name="Penguin" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(742, 224)
+position = Vector2(894, 229)
 scale = Vector2(5.23333, 5.23333)
 sprite_frames = SubResource("SpriteFrames_eo0y0")
 animation = &"idle"
+
+[node name="Levels" type="Button" parent="."]
+offset_left = 978.0
+offset_top = 10.0
+offset_right = 986.0
+offset_bottom = 18.0
+scale = Vector2(9.28, 2.8)
+
+[connection signal="pressed" from="Wolf/Wolf Equip" to="." method="_on_wolf_equip_pressed"]
+[connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]

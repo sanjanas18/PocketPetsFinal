@@ -17,3 +17,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_wolf_equip_pressed():
+	Globals.character_in_use = "wolf" # Replace with function body.
+
+
+func _on_levels_pressed():
+	
+	get_tree().change_scene_to_file("res://Levels/LevelOne.tscn")
+	
