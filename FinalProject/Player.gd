@@ -7,6 +7,7 @@ var lastmovedir: Vector2 = Vector2.ZERO
 var lastdir: Vector2 = Vector2.ZERO
 var state_time = 0.0
 var character_to_use = Globals.character_in_use
+var playerhealth = 100
 
 func _ready():
 	$RightAttack.monitoring = false
@@ -96,7 +97,9 @@ func _physics_process(delta):
 	state_time += delta
 
 
-
+func onHit():
+	playerhealth -= 10
+	print(playerhealth)
 
 func _on_sprite_animation_finished():
 	#print("calling function after animation finished")
