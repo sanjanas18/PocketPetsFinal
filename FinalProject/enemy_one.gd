@@ -1,5 +1,5 @@
 extends Enemy
-enum State {IDLE, TRACKING, ATTACK} #add attack SOON!
+enum State {IDLE, ATTACK} #add attack SOON!
 var curstate = State.IDLE
 var state_time = 0.0
 
@@ -12,7 +12,7 @@ func hit():
 
 func _ready():
 	pass
-	switch_to(State.ATTACK)
+	switch_to(State.IDLE)
 	
 
 func switch_to(new_state: State):
@@ -22,15 +22,24 @@ func switch_to(new_state: State):
 	if new_state == State.IDLE:
 		
 		$AnimatedSprite2D.play("enemy_one_idle")
-	elif new_state == State.TRACKING:
-		#tracking
-		pass
+	
 	elif new_state == State.ATTACK:
 		$AnimatedSprite2D.play("enemy_one_attack")
 		
 		
 
-
+func _physics_process(delta):
+	var player = get_tree().get_root().find_child("Player", true, false)
+	var dir = player.position - self.position
+	#gets the angle
+	var angle = rad_to_deg(dir.angle())
+	var distance = self.position.distance_to(player.position)
+	
+	
+	if curstate == State.IDLE and distance <= 500:
+		switch_to(State.ATTACK)
+	if curstate == State.ATTACK and distance > 500:
+		switch_to(State.IDLE)
 
 
 
