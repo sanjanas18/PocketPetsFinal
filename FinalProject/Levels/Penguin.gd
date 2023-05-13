@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var tracking = false
 var disabled = false
-
+var first = true
 
 
 func ready(delta):
@@ -22,13 +22,16 @@ func _physics_process(delta):
 
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("Player"):
+	if body is Player:
 		var cage = get_node("../Cage")
 		print("hit")
 		cage.hide()
 		tracking = true
 		print("in tracking")
 		disabled = true
+		if first == true:
+			body.collected()
+			first = false
 		
 		
 		

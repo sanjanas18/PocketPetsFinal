@@ -8,6 +8,7 @@ var lastdir: Vector2 = Vector2.ZERO
 var state_time = 0.0
 var character_to_use = Globals.character_in_use
 var playerhealth = 100
+var collect = false
 
 func _ready():
 	$RightAttack.monitoring = false
@@ -95,11 +96,17 @@ func _physics_process(delta):
 	update_movement_animation()
 
 	state_time += delta
-
+	if playerhealth == 0:
+		self.queue_free
 
 func onHit():
 	playerhealth -= 10
 	print(playerhealth)
+	
+func collected():
+	collect = true
+	Globals.characteraray.append("Penguin")
+	print(Globals.characteraray)
 
 func _on_sprite_animation_finished():
 	#print("calling function after animation finished")

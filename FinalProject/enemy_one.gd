@@ -36,9 +36,9 @@ func _physics_process(delta):
 	var distance = self.position.distance_to(player.position)
 	
 	
-	if curstate == State.IDLE and distance <= 500:
+	if curstate == State.IDLE and distance <= 200:
 		switch_to(State.ATTACK)
-	if curstate == State.ATTACK and distance > 500:
+	if curstate == State.ATTACK and distance > 200:
 		switch_to(State.IDLE)
 
 
