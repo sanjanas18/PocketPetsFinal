@@ -8,18 +8,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print($WinScreen)
+	pass
 	
 
 
 func _on_win_trigger_body_entered(body):
-	
+	print(Globals.characteraray)
 	if body is Player:
 		print("the player reached")
 		$WinScreen.show()
 		$WinText.show()
 		$WinButton.show()
-		body.collected()
+		
 		
 		
 	

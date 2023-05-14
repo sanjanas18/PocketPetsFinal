@@ -108,7 +108,7 @@ func _physics_process(delta):
 func onHit():
 	playerhealth -= 10
 	print(playerhealth)
-	
+	$Health.text = "Health " + str(playerhealth)
 func collected():
 	collect = true
 	Globals.characteraray.append("Penguin")

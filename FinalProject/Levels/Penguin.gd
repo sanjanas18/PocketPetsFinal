@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Penguin extends CharacterBody2D
 
 var tracking = false
 var disabled = false
@@ -18,7 +18,8 @@ func _physics_process(delta):
 		disablecollider()
 		
 	
-	
+func Penguincollected():
+	pass
 
 
 func _on_area_2d_body_entered(body):

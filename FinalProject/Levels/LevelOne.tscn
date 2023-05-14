@@ -462,6 +462,16 @@ scale = Vector2(5, 5.754)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
+[node name="Health" type="RichTextLabel" parent="Player"]
+offset_left = -107.2
+offset_top = -52.1376
+offset_right = -12.2
+offset_bottom = -12.1376
+scale = Vector2(0.492277, 0.189239)
+text = "Health: 100"
+scroll_active = false
+autowrap_mode = 0
+
 [node name="gem" parent="." instance=ExtResource("7_l5qyd")]
 position = Vector2(1525, 787)
 scale = Vector2(1.242, 1)
@@ -501,17 +511,17 @@ shape = SubResource("RectangleShape2D_0u344")
 
 [node name="WinScreen" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(4188.51, 1794.48)
+position = Vector2(4289, 2045)
 scale = Vector2(1685.57, 878.956)
 texture = SubResource("CanvasTexture_ykvsr")
 
 [node name="WinText" type="RichTextLabel" parent="."]
 visible = false
 modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
-offset_left = 3882.51
-offset_top = 1704.48
-offset_right = 4084.51
-offset_bottom = 1744.48
+offset_left = 3963.0
+offset_top = 1898.0
+offset_right = 4165.0
+offset_bottom = 1938.0
 scale = Vector2(3.06588, 1.66539)
 text = "You passed Level One!"
 scroll_active = false
@@ -519,10 +529,10 @@ autowrap_mode = 0
 
 [node name="WinButton" type="Button" parent="."]
 visible = false
-offset_left = 4087.51
-offset_top = 1832.48
-offset_right = 4257.51
-offset_bottom = 1868.48
+offset_left = 4144.0
+offset_top = 2056.0
+offset_right = 4314.0
+offset_bottom = 2092.0
 text = "Main Menu"
 
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
