@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("1_so31y")
 }],
-"loop": true,
+"loop": false,
 "name": &"wolf_back",
 "speed": 5.0
 }, {
@@ -109,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_8jdk2")
 }],
-"loop": true,
+"loop": false,
 "name": &"wolf_right",
 "speed": 5.0
 }]
@@ -121,14 +121,14 @@ radius = 9.21053
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlnxw"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_4il6o")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -4.76837e-07)
 scale = Vector2(0.7, 0.633333)
 sprite_frames = SubResource("SpriteFrames_ylqck")
-animation = &"wolf_right"
+animation = &"wolf_back"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")

@@ -11,7 +11,7 @@ func _ready():
 			$Wolf.show()
 			print("contains")
 		if sprite == "Penguin":
-			$Penguin.show
+			$Penguin.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

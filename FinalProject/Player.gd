@@ -9,6 +9,7 @@ var state_time = 0.0
 var character_to_use = Globals.character_in_use
 var playerhealth = 100
 var collect = false
+var inputon = false
 
 func _ready():
 	$RightAttack.monitoring = false
@@ -70,18 +71,23 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_up"):
 		dir.y = -1
 		switch_to(State.MOVE)
+		inputon = true
 	elif Input.is_action_pressed("ui_down"):
 		dir.y = 1	
 		switch_to(State.MOVE)
+		inputon = true
 	elif Input.is_action_pressed("ui_left"):
 		dir.x = -1	
 		switch_to(State.MOVE)
+		inputon = true
 	elif Input.is_action_pressed("ui_right"):
 		dir.x = 1	
 		switch_to(State.MOVE)	
+		inputon = true
 	elif Input.is_action_just_pressed("ui_accept"):
 		switch_to(State.ATTACK)
-	
+	else:
+		inputon = false
 	
 
 		
@@ -116,8 +122,9 @@ func _on_sprite_animation_finished():
 			switch_to(State.MOVE)
 		else:
 			switch_to(State.IDLE)
-	if curstate == State.MOVE:
+	if curstate == State.MOVE and inputon == false:
 		switch_to(State.IDLE)
+	
 			
 
 
