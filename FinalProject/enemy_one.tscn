@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2rmns61pqkjn"]
+[gd_scene load_steps=25 format=3 uid="uid://d2rmns61pqkjn"]
 
 [ext_resource type="PackedScene" uid="uid://b7q0ctwteq5t" path="res://Enemy.tscn" id="1_ci71a"]
 [ext_resource type="Script" path="res://enemy_one.gd" id="2_wkn7r"]
@@ -13,8 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://p5e041bbrvtx" path="res://art/skeleton/tile015.png" id="7_m31na"]
 [ext_resource type="Texture2D" uid="uid://cbmgm3i3ecark" path="res://art/skeleton/tile009.png" id="8_ud1vt"]
 [ext_resource type="Texture2D" uid="uid://cqljcuvnqhit8" path="res://art/skeleton/tile016.png" id="8_yshfa"]
+[ext_resource type="Texture2D" uid="uid://bdfjkttth8vub" path="res://art/skeleton/tile024.png" id="9_p7vkx"]
 [ext_resource type="Texture2D" uid="uid://y11gt5gh323j" path="res://art/skeleton/tile010.png" id="9_v2cvi"]
+[ext_resource type="Texture2D" uid="uid://bpfnhrbntqcia" path="res://art/skeleton/tile025.png" id="10_pwkwv"]
 [ext_resource type="Texture2D" uid="uid://y8xmcgmne0fp" path="res://art/skeleton/tile011.png" id="10_ynqfq"]
+[ext_resource type="Texture2D" uid="uid://d268t56mb6bul" path="res://art/skeleton/tile026.png" id="11_ay2vr"]
+[ext_resource type="Texture2D" uid="uid://dj5fhk1dkeh4g" path="res://art/skeleton/tile027.png" id="12_4ip2l"]
+[ext_resource type="Texture2D" uid="uid://dbgvqja2ake0" path="res://art/skeleton/tile028.png" id="13_gmx82"]
+[ext_resource type="Texture2D" uid="uid://dddtxp35farln" path="res://art/skeleton/tile029.png" id="14_whp6d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ttglu"]
 radius = 9.26156
@@ -42,6 +48,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"enemy_one_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_p7vkx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pwkwv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ay2vr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4ip2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gmx82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_whp6d")
+}],
+"loop": false,
+"name": &"enemy_one_dead",
 "speed": 5.0
 }, {
 "frames": [{
@@ -92,7 +121,7 @@ debug_color = Color(0, 0.396078, 0.701961, 0.419608)
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_mdx3h")
-animation = &"enemy_one_attack"
+animation = &"enemy_one_dead"
 
 [node name="Attack2D" type="Area2D" parent="." index="2"]
 position = Vector2(-18, 152)

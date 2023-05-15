@@ -1,5 +1,5 @@
 extends Enemy
-enum State {IDLE, ATTACK} #add attack SOON!
+enum State {IDLE, ATTACK, DEAD} #add attack SOON!
 var curstate = State.IDLE
 var state_time = 0.0
 
@@ -7,7 +7,8 @@ func hit():
 
 	var banana = "banana"
 	print("hit enemy")
-	self.queue_free()
+	switch_to(State.DEAD)
+	
 	# Called when your enemy is hit, you probably want to implement it
 
 func _ready():
@@ -25,7 +26,9 @@ func switch_to(new_state: State):
 	
 	elif new_state == State.ATTACK:
 		$AnimatedSprite2D.play("enemy_one_attack")
-		
+	
+	elif new_state == State.DEAD:
+		$AnimatedSprite2D.play("enemy_one_dead")
 		
 
 func _physics_process(delta):
@@ -58,4 +61,6 @@ func _on_animated_sprite_2d_animation_finished():
 	if curstate == State.ATTACK:
 		switch_to(State.IDLE)
 	#do the same for the other states
+	if curstate == State.DEAD:
+		self.queue_free()
 
