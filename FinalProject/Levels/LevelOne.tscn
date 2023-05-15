@@ -490,6 +490,16 @@ scale = Vector2(1.92288, 0.786088)
 text = "You died"
 scroll_active = false
 
+[node name="Inventory" type="RichTextLabel" parent="Player"]
+offset_left = 21.0
+offset_top = -52.0
+offset_right = 203.0
+offset_bottom = -29.0
+scale = Vector2(0.422748, 0.256928)
+text = "Inventory: "
+scroll_active = false
+autowrap_mode = 0
+
 [node name="gem" parent="." instance=ExtResource("7_l5qyd")]
 position = Vector2(1525, 787)
 scale = Vector2(1.242, 1)
@@ -552,6 +562,18 @@ offset_top = 2056.0
 offset_right = 4314.0
 offset_bottom = 2092.0
 text = "Main Menu"
+
+[node name="EnemyOne2" parent="." instance=ExtResource("12_a214w")]
+position = Vector2(1897, 1227)
+scale = Vector2(0.28, 0.24)
+
+[node name="EnemyOne3" parent="." instance=ExtResource("12_a214w")]
+position = Vector2(3837, 179)
+scale = Vector2(0.36, 0.319999)
+
+[node name="EnemyOne4" parent="." instance=ExtResource("12_a214w")]
+position = Vector2(3942, 161)
+scale = Vector2(0.4, 0.32)
 
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]

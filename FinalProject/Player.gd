@@ -47,10 +47,10 @@ func switch_to(new_state: State):
 			$Sprite.play(character_to_use + "_attack")
 	if new_state == State.DEAD:
 		moveable = false
-		print("dead")
+		
 		$Sprite.hide()
 		var deadtext = get_node("../Player/DeadText")
-		print($Dead)
+		
 		
 		#$Dead.set_visible(true)
 		#$DeadText.set_visible(true)
