@@ -143,8 +143,8 @@ shape = SubResource("CircleShape2D_oiveh")
 [node name="LeftAttack" type="Area2D" parent="."]
 
 [node name="LeftArea" type="CollisionShape2D" parent="LeftAttack"]
-position = Vector2(-7, 0)
-scale = Vector2(-0.8932, 1.02683)
+position = Vector2(-6, -1)
+scale = Vector2(0.9068, 1.02683)
 shape = SubResource("CircleShape2D_xlnxw")
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

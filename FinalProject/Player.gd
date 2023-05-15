@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-enum State {IDLE, MOVE, ATTACK} #add attack SOON!
+enum State {IDLE, MOVE, ATTACK, DEAD} #add attack SOON!
 var curstate = State.IDLE
 var speed = 5
 var lastmovedir: Vector2 = Vector2.ZERO
@@ -10,6 +10,7 @@ var character_to_use = Globals.character_in_use
 var playerhealth = 100
 var collect = false
 var inputon = false
+var moveable = true
 
 func _ready():
 	$RightAttack.monitoring = false
@@ -44,6 +45,18 @@ func switch_to(new_state: State):
 			$Sprite.flip_h = true
 		else:
 			$Sprite.play(character_to_use + "_attack")
+	if new_state == State.DEAD:
+		moveable = false
+		print("dead")
+		$Sprite.hide()
+		var deadtext = get_node("../Player/DeadText")
+		print($Dead)
+		
+		#$Dead.set_visible(true)
+		#$DeadText.set_visible(true)
+		
+		$Dead.show()
+		$DeadText.show()
 		
 		
 func update_movement_animation():
@@ -68,23 +81,23 @@ func _physics_process(delta):
 	var dir = Vector2.ZERO
 	
 	# Setup a movement vector based on keyboard input
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") and moveable == true:
 		dir.y = -1
 		switch_to(State.MOVE)
 		inputon = true
-	elif Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down") and moveable == true:
 		dir.y = 1	
 		switch_to(State.MOVE)
 		inputon = true
-	elif Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left") and moveable == true:
 		dir.x = -1	
 		switch_to(State.MOVE)
 		inputon = true
-	elif Input.is_action_pressed("ui_right"):
+	elif Input.is_action_pressed("ui_right") and moveable == true:
 		dir.x = 1	
 		switch_to(State.MOVE)	
 		inputon = true
-	elif Input.is_action_just_pressed("ui_accept"):
+	elif Input.is_action_just_pressed("ui_accept") and moveable == true:
 		switch_to(State.ATTACK)
 	else:
 		inputon = false
@@ -102,8 +115,9 @@ func _physics_process(delta):
 	update_movement_animation()
 
 	state_time += delta
-	if playerhealth == 0:
-		self.queue_free
+	if playerhealth <= 0:
+		switch_to(State.DEAD)
+		#$Camera2D.queue_free()
 
 func onHit():
 	playerhealth -= 10
@@ -148,3 +162,7 @@ func _on_left_attack_body_entered(body):
 		if body is Enemy:
 			body.hit()
 			
+
+
+func _on_dead_pressed():
+	get_tree().change_scene_to_file("res://MainMenu.tscn")

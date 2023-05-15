@@ -472,6 +472,22 @@ text = "Health: 100"
 scroll_active = false
 autowrap_mode = 0
 
+[node name="Dead" type="Button" parent="Player"]
+offset_left = -35.6
+offset_top = -2.78067
+offset_right = 60.4
+offset_bottom = 28.2193
+text = "Main Menu"
+
+[node name="DeadText" type="RichTextLabel" parent="Player"]
+offset_left = -63.0
+offset_top = -31.804
+offset_right = 13.0
+offset_bottom = 8.19604
+scale = Vector2(1.92288, 0.786088)
+text = "You died"
+scroll_active = false
+
 [node name="gem" parent="." instance=ExtResource("7_l5qyd")]
 position = Vector2(1525, 787)
 scale = Vector2(1.242, 1)
@@ -535,5 +551,6 @@ offset_right = 4314.0
 offset_bottom = 2092.0
 text = "Main Menu"
 
+[connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
