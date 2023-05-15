@@ -473,6 +473,7 @@ scroll_active = false
 autowrap_mode = 0
 
 [node name="Dead" type="Button" parent="Player"]
+visible = false
 offset_left = -35.6
 offset_top = -2.78067
 offset_right = 60.4
@@ -480,6 +481,7 @@ offset_bottom = 28.2193
 text = "Main Menu"
 
 [node name="DeadText" type="RichTextLabel" parent="Player"]
+visible = false
 offset_left = -63.0
 offset_top = -31.804
 offset_right = 13.0
