@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b331xo6qfnqgt"]
+[gd_scene load_steps=25 format=3 uid="uid://b331xo6qfnqgt"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Script" path="res://Levels/LevelOne.gd" id="1_oitqn"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cybd5q3xhlmwm" path="res://penguin.tscn" id="9_6aadl"]
 [ext_resource type="Texture2D" uid="uid://btr53dxrvhrh5" path="res://art/Objects/image-removebg-preview - 2023-05-09T103236.695.png" id="10_jaji4"]
 [ext_resource type="PackedScene" uid="uid://d2rmns61pqkjn" path="res://enemy_one.tscn" id="12_a214w"]
+[ext_resource type="PackedScene" uid="uid://6nngnlf6kvj" path="res://enemy_two.tscn" id="14_kggja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -574,6 +575,9 @@ scale = Vector2(0.36, 0.319999)
 [node name="EnemyOne4" parent="." instance=ExtResource("12_a214w")]
 position = Vector2(3942, 161)
 scale = Vector2(0.4, 0.32)
+
+[node name="enemy_two" parent="." instance=ExtResource("14_kggja")]
+position = Vector2(1297, 390)
 
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]

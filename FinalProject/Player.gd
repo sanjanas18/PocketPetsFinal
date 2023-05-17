@@ -43,8 +43,10 @@ func switch_to(new_state: State):
 			$Sprite.play(character_to_use + "_attack")
 			#$Sprite.speed_scale = 0.5
 			$Sprite.flip_h = true
-		else:
-			$Sprite.play(character_to_use + "_attack")
+		elif lastmovedir.y >0:
+			$Sprite.play(character_to_use + "_front")
+		elif lastmovedir.y < 0:
+			$Sprite.play(character_to_use + "_back")
 	if new_state == State.DEAD:
 		moveable = false
 		

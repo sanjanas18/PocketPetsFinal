@@ -6,6 +6,12 @@
 radius = 7.07107
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cxvyk"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_sfkae")
