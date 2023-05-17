@@ -5,11 +5,13 @@ var disabled = false
 var first = true
 
 
+
 func ready(delta):
 	$AnimatedSprite2D.play("idle")
 	$Collider.disabled = false   
 
 func _physics_process(delta):
+	print(self.get_name())
 	if tracking == false:
 		$AnimatedSprite2D.play("idle")
 	elif tracking == true:
