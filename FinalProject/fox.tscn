@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy0jp5bl6lbnh"]
+[gd_scene load_steps=9 format=3 uid="uid://cy0jp5bl6lbnh"]
 
 [ext_resource type="Script" path="res://fox.gd" id="1_vqgar"]
 [ext_resource type="Texture2D" uid="uid://6ueb84244b02" path="res://art/AnimalsIdrew/Fox/tile000.png" id="1_xarc4"]
@@ -27,6 +27,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_pb8ly"]
 radius = 10.8112
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_qreds"]
+
 [node name="Fox" type="CharacterBody2D"]
 script = ExtResource("1_vqgar")
 
@@ -48,5 +50,11 @@ position = Vector2(2, -6)
 position = Vector2(-1, 5)
 scale = Vector2(1.57359, 1.47439)
 shape = SubResource("CircleShape2D_pb8ly")
+
+[node name="shadow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.75, 0.5)
+scale = Vector2(4.5, 3)
+texture = SubResource("CanvasTexture_qreds")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

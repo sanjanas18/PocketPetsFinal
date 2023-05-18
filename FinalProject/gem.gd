@@ -17,7 +17,7 @@ func _process(delta):
 func _on_body_entered(body):
 	var wall = get_node("../Wall")
 	var inventory = get_node("../Player/Inventory")
-	inventory.text = "Inventory: One Gem"
+	inventory.text = "Inventory: Gem"
 	wall.queue_free()
 	self.queue_free()
 	
