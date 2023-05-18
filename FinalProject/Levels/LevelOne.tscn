@@ -535,7 +535,7 @@ scale = Vector2(28.8862, 45.7389)
 position = Vector2(-0.0692291, 0)
 shape = SubResource("RectangleShape2D_0u344")
 
-[node name="Penguin" parent="." instance=ExtResource("14_l7a5k")]
+[node name="Bear" parent="." instance=ExtResource("14_l7a5k")]
 position = Vector2(1159, -200)
 scale = Vector2(2.30652, 2.37539)
 

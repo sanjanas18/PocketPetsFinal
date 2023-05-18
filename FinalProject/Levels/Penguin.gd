@@ -16,7 +16,7 @@ func ready(delta):
 func _physics_process(delta):
 	Globals.current_sprite = self.get_name()
 	var current = self.get_name()
-	print(Globals.current_sprite)
+	#print(Globals.current_sprite)
 	
 	
 	if tracking == false:
@@ -54,8 +54,17 @@ func track():
 	var player = get_node("../Player")
 	var motion = Vector2()
 	position += (player.position - position)/50
+	#print(position)
 	
 	move_and_collide(motion)
+	if player.position.x > self.position.x:
+		print("right")
+	elif player.position.x < self.position.x:
+		print("left")
+	elif player.position.y < self.position.y:
+		print("down")
+	elif player.position.y > self.position.y:
+		print("up")
 	
 func disablecollider():
 	$Collider.disabled = true

@@ -518,7 +518,7 @@ texture = ExtResource("10_rr7xi")
 position = Vector2(2.49976, -28.856)
 shape = SubResource("RectangleShape2D_d3ovr")
 
-[node name="Bear" parent="." instance=ExtResource("11_v7efd")]
+[node name="Penguin" parent="." instance=ExtResource("11_v7efd")]
 position = Vector2(1158.16, -202.896)
 scale = Vector2(2.64002, 2.52)
 
