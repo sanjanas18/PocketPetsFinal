@@ -22,7 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://cy0jp5bl6lbnh" path="res://fox.tscn" id="15_h07b8"]
 [ext_resource type="FontFile" uid="uid://qjyvjm0817lt" path="res://art/04B_30__.TTF" id="21_ywsfu"]
 [ext_resource type="Texture2D" uid="uid://dr0l3fu2uv4wj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T143437.375.png" id="22_phxwb"]
-[ext_resource type="Texture2D" uid="uid://ctu70i8378hql" path="res://art/Sprout Lands - Sprites - Basic pack/button.png" id="23_0oqn8"]
+[ext_resource type="Texture2D" uid="uid://c2isbnmls0jrw" path="res://art/Sprout Lands - Sprites - Basic pack/pawprintborder.jpg" id="23_83kg5"]
+[ext_resource type="Texture2D" uid="uid://yvxya0yjudrj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T153108.164.png" id="24_mm3k4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -1294,10 +1295,8 @@ _data = {
 "typing": SubResource("Animation_f8jjs")
 }
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ykvsr"]
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b605f"]
-texture = ExtResource("23_0oqn8")
+texture = ExtResource("24_mm3k4")
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_oitqn")
@@ -1472,18 +1471,18 @@ libraries = {
 
 [node name="WinScreen" type="Sprite2D" parent="Player"]
 visible = false
-position = Vector2(1.40001, -0.173794)
-scale = Vector2(233.453, 112.754)
-texture = SubResource("CanvasTexture_ykvsr")
+position = Vector2(0.230339, -0.0830029)
+scale = Vector2(0.246318, 0.17299)
+texture = ExtResource("23_83kg5")
 
 [node name="WinText" type="RichTextLabel" parent="Player"]
 visible = false
 modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
-offset_left = -109.2
-offset_top = -44.6646
-offset_right = 98.8
-offset_bottom = 0.335423
-scale = Vector2(1.06985, 0.557776)
+offset_left = -88.8
+offset_top = -37.0177
+offset_right = 191.2
+offset_bottom = -0.0177231
+scale = Vector2(0.635628, 0.729023)
 theme_override_fonts/normal_font = ExtResource("21_ywsfu")
 text = "You passed Level One!"
 scroll_active = false
@@ -1491,15 +1490,14 @@ autowrap_mode = 0
 
 [node name="WinButton" type="Button" parent="Player"]
 visible = false
-offset_left = -89.8
-offset_top = -10.4275
-offset_right = 80.2
-offset_bottom = 25.5725
-scale = Vector2(1.1767, 1.09967)
+offset_left = -81.8
+offset_top = -10.6013
+offset_right = 88.2
+offset_bottom = 25.3987
+scale = Vector2(1.05798, 1.05466)
 theme_override_fonts/font = ExtResource("21_ywsfu")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_b605f")
-text = "Main Menu"
 
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
