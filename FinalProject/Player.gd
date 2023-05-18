@@ -124,7 +124,7 @@ func _physics_process(delta):
 func onHit():
 	playerhealth -= 10
 	print(playerhealth)
-	$Health.text = "Health " + str(playerhealth)
+	$Health.text = "HP " + str(playerhealth)
 func collected():
 	collect = true
 	var character_sprite = Globals.current_sprite

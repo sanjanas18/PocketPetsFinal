@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bhi38t4t5wm25"]
+[gd_scene load_steps=43 format=3 uid="uid://bhi38t4t5wm25"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Script" path="res://Levels/LevelOne.gd" id="1_oitqn"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cy0jp5bl6lbnh" path="res://fox.tscn" id="15_h07b8"]
 [ext_resource type="FontFile" uid="uid://qjyvjm0817lt" path="res://art/04B_30__.TTF" id="21_ywsfu"]
 [ext_resource type="Texture2D" uid="uid://dr0l3fu2uv4wj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T143437.375.png" id="22_phxwb"]
+[ext_resource type="Texture2D" uid="uid://ctu70i8378hql" path="res://art/Sprout Lands - Sprites - Basic pack/button.png" id="23_0oqn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -1256,8 +1257,6 @@ size = Vector2(357, 112.288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0u344"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_ykvsr"]
-
 [sub_resource type="Animation" id="Animation_dks3q"]
 length = 0.001
 tracks/0/type = "value"
@@ -1294,6 +1293,11 @@ _data = {
 "RESET": SubResource("Animation_dks3q"),
 "typing": SubResource("Animation_f8jjs")
 }
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ykvsr"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b605f"]
+texture = ExtResource("23_0oqn8")
 
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_oitqn")
@@ -1338,6 +1342,7 @@ position = Vector2(2.49976, -28.856)
 shape = SubResource("RectangleShape2D_d3ovr")
 
 [node name="Cage" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(1161, -256.899)
 scale = Vector2(0.401629, 0.367597)
 texture = ExtResource("10_jaji4")
@@ -1357,32 +1362,6 @@ shape = SubResource("RectangleShape2D_0u344")
 [node name="Bear" parent="." instance=ExtResource("14_l7a5k")]
 position = Vector2(1162, -256)
 scale = Vector2(2.30652, 2.37539)
-
-[node name="WinScreen" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(4289, 2045)
-scale = Vector2(1685.57, 878.956)
-texture = SubResource("CanvasTexture_ykvsr")
-
-[node name="WinText" type="RichTextLabel" parent="."]
-visible = false
-modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
-offset_left = 3963.0
-offset_top = 1898.0
-offset_right = 4165.0
-offset_bottom = 1938.0
-scale = Vector2(3.06588, 1.66539)
-text = "You passed Level One!"
-scroll_active = false
-autowrap_mode = 0
-
-[node name="WinButton" type="Button" parent="."]
-visible = false
-offset_left = 4144.0
-offset_top = 2056.0
-offset_right = 4314.0
-offset_bottom = 2092.0
-text = "Main Menu"
 
 [node name="EnemyOne2" parent="." instance=ExtResource("12_a214w")]
 position = Vector2(1897, 1227)
@@ -1429,7 +1408,7 @@ offset_right = -17.8
 offset_bottom = -14.9183
 scale = Vector2(0.483474, 0.389551)
 theme_override_fonts/normal_font = ExtResource("21_ywsfu")
-text = "Health: 100"
+text = "HP: 100"
 scroll_active = false
 autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
@@ -1491,6 +1470,37 @@ libraries = {
 "": SubResource("AnimationLibrary_bv48s")
 }
 
+[node name="WinScreen" type="Sprite2D" parent="Player"]
+visible = false
+position = Vector2(1.40001, -0.173794)
+scale = Vector2(233.453, 112.754)
+texture = SubResource("CanvasTexture_ykvsr")
+
+[node name="WinText" type="RichTextLabel" parent="Player"]
+visible = false
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
+offset_left = -109.2
+offset_top = -44.6646
+offset_right = 98.8
+offset_bottom = 0.335423
+scale = Vector2(1.06985, 0.557776)
+theme_override_fonts/normal_font = ExtResource("21_ywsfu")
+text = "You passed Level One!"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="WinButton" type="Button" parent="Player"]
+visible = false
+offset_left = -89.8
+offset_top = -10.4275
+offset_right = 80.2
+offset_bottom = 25.5725
+scale = Vector2(1.1767, 1.09967)
+theme_override_fonts/font = ExtResource("21_ywsfu")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_b605f")
+text = "Main Menu"
+
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
-[connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
+[connection signal="pressed" from="Player/WinButton" to="." method="_on_win_button_pressed"]
