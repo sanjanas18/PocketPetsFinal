@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cy0jp5bl6lbnh"]
+
+[ext_resource type="Script" path="res://fox.gd" id="1_vqgar"]
+[ext_resource type="Texture2D" uid="uid://6ueb84244b02" path="res://art/AnimalsIdrew/Fox/tile000.png" id="1_xarc4"]
+[ext_resource type="Texture2D" uid="uid://dqgcvg4fpr3tf" path="res://art/AnimalsIdrew/Fox/tile001.png" id="2_lhis4"]
+[ext_resource type="Texture2D" uid="uid://b0r1e48xnakwh" path="res://art/AnimalsIdrew/Fox/tile002.png" id="3_5m047"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ih1qh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbpqj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xarc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_lhis4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5m047")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pb8ly"]
+radius = 10.8112
+
+[node name="Fox" type="CharacterBody2D"]
+script = ExtResource("1_vqgar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.810426, 0.78006)
+shape = SubResource("CircleShape2D_ih1qh")
+debug_color = Color(0, 0.184314, 0.701961, 0.419608)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_hbpqj")
+animation = &"idle"
+frame_progress = 0.860163
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(2, -6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 5)
+scale = Vector2(1.57359, 1.47439)
+shape = SubResource("CircleShape2D_pb8ly")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
