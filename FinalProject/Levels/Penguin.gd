@@ -1,4 +1,4 @@
-class_name Penguin extends CharacterBody2D
+class_name NewCharacter extends CharacterBody2D
 
 var tracking = false
 var disabled = false
@@ -7,13 +7,20 @@ var first = true
 
 
 func ready(delta):
-	$AnimatedSprite2D.play("idle")
+	
+	var currentt = self.get_name()
+	
+	$AnimatedSprite2D.play(currentt + "_idle")
 	$Collider.disabled = false   
 
 func _physics_process(delta):
-	print(self.get_name())
+	Globals.current_sprite = self.get_name()
+	var current = self.get_name()
+	print(Globals.current_sprite)
+	
+	
 	if tracking == false:
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play(current + "_idle")
 	elif tracking == true:
 		track()
 	if disabled == true:

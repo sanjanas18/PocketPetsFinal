@@ -23,3 +23,4 @@ shape = SubResource("CircleShape2D_p5b0i")
 position = Vector2(2.38419e-07, 0.5)
 scale = Vector2(10, 13)
 sprite_frames = SubResource("SpriteFrames_cxvyk")
+animation = &"idle"

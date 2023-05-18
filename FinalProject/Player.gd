@@ -127,7 +127,8 @@ func onHit():
 	$Health.text = "Health " + str(playerhealth)
 func collected():
 	collect = true
-	Globals.characteraray.append("Penguin")
+	var character_sprite = Globals.current_sprite
+	Globals.characteraray.append(character_sprite)
 	print(Globals.characteraray)
 
 func _on_sprite_animation_finished():

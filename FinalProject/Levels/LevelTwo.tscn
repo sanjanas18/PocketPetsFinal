@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5xx8yoag0m6f"]
+[gd_scene load_steps=25 format=3 uid="uid://c1drnfoptg2ml"]
 
 [ext_resource type="Script" path="res://Levels/LevelOne.gd" id="1_np086"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_gdc5w"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5ii57p67r7i" path="res://Player.tscn" id="8_na6dj"]
 [ext_resource type="PackedScene" uid="uid://wx5gqjh2jxcm" path="res://gem.tscn" id="9_dq3w8"]
 [ext_resource type="Texture2D" uid="uid://cwlsm7fgev6ls" path="res://image-removebg-preview - 2023-05-08T124146.033.png" id="10_rr7xi"]
-[ext_resource type="PackedScene" uid="uid://cybd5q3xhlmwm" path="res://penguin.tscn" id="11_v7efd"]
+[ext_resource type="PackedScene" uid="uid://cybd5q3xhlmwm" path="res://NewCharacter.tscn" id="11_v7efd"]
 [ext_resource type="Texture2D" uid="uid://btr53dxrvhrh5" path="res://art/Objects/image-removebg-preview - 2023-05-09T103236.695.png" id="12_8p6lu"]
 [ext_resource type="PackedScene" uid="uid://d2rmns61pqkjn" path="res://enemy_one.tscn" id="13_jdcjt"]
 [ext_resource type="PackedScene" uid="uid://6nngnlf6kvj" path="res://enemy_two.tscn" id="14_h1830"]
@@ -518,7 +518,7 @@ texture = ExtResource("10_rr7xi")
 position = Vector2(2.49976, -28.856)
 shape = SubResource("RectangleShape2D_d3ovr")
 
-[node name="Penguin" parent="." instance=ExtResource("11_v7efd")]
+[node name="Bear" parent="." instance=ExtResource("11_v7efd")]
 position = Vector2(1158.16, -202.896)
 scale = Vector2(2.64002, 2.52)
 
