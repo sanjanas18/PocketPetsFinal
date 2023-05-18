@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://6nngnlf6kvj"]
+[gd_scene load_steps=19 format=3 uid="uid://6nngnlf6kvj"]
 
 [ext_resource type="PackedScene" uid="uid://b7q0ctwteq5t" path="res://Enemy.tscn" id="1_ysc4p"]
 [ext_resource type="Script" path="res://enemy_two.gd" id="2_xgmi5"]
@@ -80,8 +80,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hesju"]
 radius = 18.6789
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dirxs"]
-
 [node name="enemy_two" instance=ExtResource("1_ysc4p")]
 script = ExtResource("2_xgmi5")
 
@@ -101,12 +99,6 @@ position = Vector2(10, -42.5001)
 scale = Vector2(-5.76033, 12.7621)
 shape = SubResource("CircleShape2D_hesju")
 debug_color = Color(0, 0.0823529, 0.701961, 0.419608)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Attack2D" index="1"]
-position = Vector2(5, -45)
-scale = Vector2(2.36666, 3.19277)
-shape = SubResource("CircleShape2D_dirxs")
-debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="Attack2D" to="." method="_on_attack_2d_body_entered"]

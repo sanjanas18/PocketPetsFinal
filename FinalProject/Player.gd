@@ -59,6 +59,7 @@ func switch_to(new_state: State):
 		
 		$Dead.show()
 		$DeadText.show()
+		$DeadScreen.show()
 		
 		
 func update_movement_animation():

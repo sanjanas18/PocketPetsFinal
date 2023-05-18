@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bhi38t4t5wm25"]
+[gd_scene load_steps=44 format=3 uid="uid://bhi38t4t5wm25"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Script" path="res://Levels/LevelOne.gd" id="1_oitqn"]
@@ -1258,6 +1258,8 @@ size = Vector2(357, 112.288)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0u344"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_jlc3v"]
+
 [sub_resource type="Animation" id="Animation_dks3q"]
 length = 0.001
 tracks/0/type = "value"
@@ -1412,21 +1414,31 @@ scroll_active = false
 autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="DeadScreen" type="Sprite2D" parent="Player"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-0.799984, 1.21655)
+scale = Vector2(234, 115.398)
+texture = SubResource("CanvasTexture_jlc3v")
+
 [node name="Dead" type="Button" parent="Player"]
 visible = false
-offset_left = -35.6
-offset_top = -2.78067
-offset_right = 60.4
-offset_bottom = 28.2193
+offset_left = -60.4
+offset_top = 6.77789
+offset_right = 66.6
+offset_bottom = 37.7779
+theme_override_fonts/font = ExtResource("21_ywsfu")
 text = "Main Menu"
 
 [node name="DeadText" type="RichTextLabel" parent="Player"]
 visible = false
-offset_left = -63.0
-offset_top = -31.804
-offset_right = 13.0
-offset_bottom = 8.19604
-scale = Vector2(1.92288, 0.786088)
+modulate = Color(0.847059, 0.0313726, 0.247059, 1)
+offset_left = -95.8
+offset_top = -48.1404
+offset_right = 22.2
+offset_bottom = -26.1404
+scale = Vector2(1.84776, 2.27868)
+theme_override_fonts/normal_font = ExtResource("21_ywsfu")
 text = "You died"
 scroll_active = false
 
