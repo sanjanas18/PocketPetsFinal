@@ -57,14 +57,14 @@ func track():
 	#print(position)
 	
 	move_and_collide(motion)
-	if player.position.x > self.position.x:
+	
+	
+	if player.position > self.position:
 		print("right")
-	elif player.position.x < self.position.x:
+	elif player.position < self.position:
 		print("left")
-	elif player.position.y < self.position.y:
-		print("down")
-	elif player.position.y > self.position.y:
-		print("up")
+	else:
+		print("none")
 	
 func disablecollider():
 	$Collider.disabled = true
