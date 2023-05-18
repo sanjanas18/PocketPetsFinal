@@ -39,7 +39,7 @@ debug_color = Color(0, 0.184314, 0.701961, 0.419608)
 position = Vector2(0, -9)
 sprite_frames = SubResource("SpriteFrames_hbpqj")
 animation = &"idle"
-frame_progress = 0.860163
+frame_progress = 0.117111
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2, -6)
