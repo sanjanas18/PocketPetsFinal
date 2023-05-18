@@ -88,6 +88,7 @@ scale = Vector2(0.497241, 0.215439)
 text = "Equip"
 
 [node name="Penguin" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(894, 229)
 scale = Vector2(5.23333, 5.23333)
 sprite_frames = SubResource("SpriteFrames_eo0y0")
