@@ -5,6 +5,7 @@ var characters = Globals.characteraray
 func _ready():
 	$Wolf.play("idle")
 	$Penguin.play("idle")
+	$Bear.play("idle")
 	print(characters)
 	for sprite in characters:
 		if sprite == "wolf":
@@ -12,6 +13,8 @@ func _ready():
 			print("contains")
 		if sprite == "Penguin":
 			$Penguin.show()
+		if sprite == "Bear":
+			$Bear.show()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

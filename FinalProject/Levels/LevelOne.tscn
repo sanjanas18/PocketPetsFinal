@@ -519,8 +519,8 @@ position = Vector2(2.49976, -28.856)
 shape = SubResource("RectangleShape2D_d3ovr")
 
 [node name="Cage" type="Sprite2D" parent="."]
-position = Vector2(1159.16, -201.896)
-scale = Vector2(0.224138, 0.198524)
+position = Vector2(1161, -256.899)
+scale = Vector2(0.401629, 0.367597)
 texture = ExtResource("10_jaji4")
 
 [node name="EnemyOne" parent="." instance=ExtResource("12_a214w")]
@@ -536,7 +536,7 @@ position = Vector2(-0.0692291, 0)
 shape = SubResource("RectangleShape2D_0u344")
 
 [node name="Bear" parent="." instance=ExtResource("14_l7a5k")]
-position = Vector2(1159, -200)
+position = Vector2(1162, -256)
 scale = Vector2(2.30652, 2.37539)
 
 [node name="WinScreen" type="Sprite2D" parent="."]

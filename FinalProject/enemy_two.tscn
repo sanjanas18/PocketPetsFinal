@@ -78,6 +78,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hesju"]
+radius = 18.6789
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dirxs"]
 
@@ -96,12 +97,13 @@ position = Vector2(-18, 138)
 scale = Vector2(1, 0.799999)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack2D" index="0"]
-position = Vector2(9, -25.0001)
-scale = Vector2(-7.68033, 10.3621)
+position = Vector2(10, -42.5001)
+scale = Vector2(-5.76033, 12.7621)
 shape = SubResource("CircleShape2D_hesju")
 debug_color = Color(0, 0.0823529, 0.701961, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Attack2D" index="1"]
+position = Vector2(5, -45)
 scale = Vector2(2.36666, 3.19277)
 shape = SubResource("CircleShape2D_dirxs")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)

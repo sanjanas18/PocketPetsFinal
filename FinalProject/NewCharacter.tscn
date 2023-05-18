@@ -1,13 +1,98 @@
-[gd_scene load_steps=9 format=3 uid="uid://cybd5q3xhlmwm"]
+[gd_scene load_steps=21 format=3 uid="uid://cybd5q3xhlmwm"]
 
 [ext_resource type="Script" path="res://Levels/Penguin.gd" id="1_hml4c"]
+[ext_resource type="Texture2D" uid="uid://dhy5hpdpda3ov" path="res://art/AnimalsIdrew/Bear/BearFront/tile000.png" id="2_tkdnp"]
 [ext_resource type="Texture2D" uid="uid://defecegvaoikb" path="res://art/AnimalsIdrew/Penguin/Idle/tile000.png" id="2_y3ir5"]
+[ext_resource type="Texture2D" uid="uid://bmxwgmclsw8vt" path="res://art/AnimalsIdrew/Bear/BearFront/tile001.png" id="3_70iia"]
 [ext_resource type="Texture2D" uid="uid://dpsjntwi8uui7" path="res://art/AnimalsIdrew/Penguin/Idle/tile001.png" id="3_su4bo"]
+[ext_resource type="Texture2D" uid="uid://bik3lng7lryq7" path="res://art/AnimalsIdrew/Bear/BearFront/tile002.png" id="4_cckw5"]
 [ext_resource type="Texture2D" uid="uid://ccaymltxvtem8" path="res://art/AnimalsIdrew/Penguin/Idle/tile002.png" id="4_qmrc5"]
 [ext_resource type="Texture2D" uid="uid://eb075gaexbv6" path="res://art/AnimalsIdrew/Penguin/Idle/tile003.png" id="5_74fu4"]
+[ext_resource type="Texture2D" uid="uid://b01eqqv348leg" path="res://art/AnimalsIdrew/Bear/BearFront/tile003.png" id="5_adyg4"]
+[ext_resource type="Texture2D" uid="uid://slgl2iecmv6v" path="res://art/AnimalsIdrew/Bear/BearRight/tile008.png" id="6_4ykim"]
+[ext_resource type="Texture2D" uid="uid://bb13cp80tj50o" path="res://art/AnimalsIdrew/Bear/BearRight/tile009.png" id="7_83nmv"]
+[ext_resource type="Texture2D" uid="uid://dmg4y1ch3bjid" path="res://art/AnimalsIdrew/Bear/BearRight/tile010.png" id="8_p8bxe"]
+[ext_resource type="Texture2D" uid="uid://muk5360a11ch" path="res://art/AnimalsIdrew/Bear/BearRight/tile011.png" id="9_8qhnf"]
+[ext_resource type="Texture2D" uid="uid://d3o44h7kmwhre" path="res://art/AnimalsIdrew/Bear/BearBack/tile012.png" id="10_gel3k"]
+[ext_resource type="Texture2D" uid="uid://68tndxpclqtj" path="res://art/AnimalsIdrew/Bear/BearBack/tile013.png" id="11_4am80"]
+[ext_resource type="Texture2D" uid="uid://ci7kbb75hiqsc" path="res://art/AnimalsIdrew/Bear/BearBack/tile014.png" id="12_gwf1j"]
+[ext_resource type="Texture2D" uid="uid://cid44xdp10a38" path="res://art/AnimalsIdrew/Bear/BearBack/tile015.png" id="13_bea6t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lb4ad"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tkdnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_70iia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cckw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_adyg4")
+}],
+"loop": true,
+"name": &"Bear_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tkdnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_adyg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tkdnp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_adyg4")
+}],
+"loop": true,
+"name": &"Bear_idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Bear_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4ykim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_83nmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p8bxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8qhnf")
+}],
+"loop": true,
+"name": &"Bear_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_gel3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4am80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_gwf1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bea6t")
+}],
+"loop": true,
+"name": &"Bear_up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_y3ir5")
@@ -38,7 +123,7 @@ script = ExtResource("1_hml4c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lb4ad")
-animation = &"Penguin_idle"
+animation = &"Bear_idle"
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_y4rba")

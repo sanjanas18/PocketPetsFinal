@@ -52,6 +52,12 @@ func _physics_process(delta):
 	if curstate == State.ATTACK and distance <= 100:
 		tracking = true
 	if tracking == true:
+		if Input.is_action_pressed("ui_left"):
+			$Sprite.play("enemy_two_attack")
+			$Sprite.flip_h = true
+		elif Input.is_action_pressed("ui_right"):
+			$Sprite.play("enemy_two_attack")
+			$Sprite.flip_h = false
 		if state_time < 6:
 			var motion = Vector2()
 			position += (player.position - position)/50
@@ -59,6 +65,7 @@ func _physics_process(delta):
 			move_and_collide(motion)
 			await get_tree().create_timer(4.0).timeout
 			tracking = false
+			
 			
 		
 
