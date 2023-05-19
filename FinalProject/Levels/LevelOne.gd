@@ -23,7 +23,7 @@ func _on_win_trigger_body_entered(body):
 		winscreen.show()
 		wintext.show()
 		winbutton.show()
-		Globals.levels_done = 1
+		Globals.levels_done = 1 
 		Globals.save()
 		
 		
