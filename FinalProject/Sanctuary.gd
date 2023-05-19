@@ -1,8 +1,13 @@
 extends Node2D
-var characters = Globals.characteraray
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var load_file = FileAccess.open("user://savegame.json", FileAccess.READ)
+
+	var dict = JSON.parse_string(load_file.get_as_text())
+	
+	var characters = dict["characters"]
 	$Wolf.play("idle")
 	$Penguin.play("idle")
 	$Bear.play("idle")
@@ -17,9 +22,13 @@ func _ready():
 			$Bear.show()
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(Globals.characteraray)
+	#var load_file = FileAccess.open("user://savegame.json", FileAccess.READ)
+	pass
+	#var dict = JSON.parse_string(load_file.get_as_text())
+	#print(dict["characters"])
 
 
 

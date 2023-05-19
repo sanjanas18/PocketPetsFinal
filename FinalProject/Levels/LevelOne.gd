@@ -9,7 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var winscreen = get_node("Player/WinScreen")
-	print(winscreen)
+	#print(winscreen)
 	
 
 
@@ -23,6 +23,7 @@ func _on_win_trigger_body_entered(body):
 		winscreen.show()
 		wintext.show()
 		winbutton.show()
+		Globals.save()
 		
 		
 		

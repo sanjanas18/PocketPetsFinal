@@ -13,3 +13,6 @@ func _process(delta):
 
 func _on_sanctuary_pressed():
 	get_tree().change_scene_to_file("res://Sanctuary.tscn") # Replace with function body.
+
+
+	
