@@ -12,6 +12,17 @@
 [ext_resource type="Texture2D" uid="uid://eb075gaexbv6" path="res://art/AnimalsIdrew/Penguin/Idle/tile003.png" id="9_65bdq"]
 [ext_resource type="Texture2D" uid="uid://dhy5hpdpda3ov" path="res://art/AnimalsIdrew/Bear/BearFront/tile000.png" id="11_xh8gs"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_3j5wo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_xh8gs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8rdrn"]
 animations = [{
 "frames": [{
@@ -54,17 +65,6 @@ animations = [{
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p6r5m"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3j5wo"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_xh8gs")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [node name="Sanctuary" type="Node2D"]
 script = ExtResource("1_gwgc8")
 
@@ -73,7 +73,16 @@ position = Vector2(579.75, 327.25)
 scale = Vector2(2.08409, 2.09486)
 texture = ExtResource("1_y75x2")
 
+[node name="Bear" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(578.125, 234.031)
+rotation = 3.14159
+scale = Vector2(3.2102, -2.94361)
+sprite_frames = SubResource("SpriteFrames_3j5wo")
+animation = &"idle"
+
 [node name="Wolf" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(309, 226)
 scale = Vector2(5.63333, 6.03333)
 sprite_frames = SubResource("SpriteFrames_8rdrn")
@@ -128,13 +137,6 @@ scale = Vector2(3.97477, 3.11468)
 text = "the wolf is equipped"
 scroll_active = false
 autowrap_mode = 0
-
-[node name="Bear" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(578.125, 234.031)
-scale = Vector2(-3.2102, 2.94361)
-sprite_frames = SubResource("SpriteFrames_3j5wo")
-animation = &"idle"
 
 [connection signal="pressed" from="Wolf/Wolf Equip" to="." method="_on_wolf_equip_pressed"]
 [connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]

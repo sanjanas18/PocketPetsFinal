@@ -19,6 +19,8 @@ func _ready():
 			
 			var next = get_node("level_" + str(nextindex))
 			next.show()
+			var nextpaw = get_node("Pawprints_" + str(nextindex))
+			nextpaw.show()
 		#add show the level
 		index+=1
 		
