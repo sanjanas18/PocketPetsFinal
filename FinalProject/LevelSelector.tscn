@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl63j1n7escbu"]
+[gd_scene load_steps=4 format=3 uid="uid://bl63j1n7escbu"]
 
 [ext_resource type="Script" path="res://LevelSelector.gd" id="1_kaeiw"]
 [ext_resource type="Texture2D" uid="uid://baa3h0jpyrgjs" path="res://art/background.jpeg" id="2_6f8bl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ip7ae"]
 
 [node name="LevelSelector" type="Node2D"]
 script = ExtResource("1_kaeiw")
@@ -10,3 +12,21 @@ script = ExtResource("1_kaeiw")
 position = Vector2(573, 323)
 scale = Vector2(1.92798, 1.94426)
 texture = ExtResource("2_6f8bl")
+
+[node name="level_1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(392, 203)
+scale = Vector2(195.5, 62.5)
+texture = SubResource("CanvasTexture_ip7ae")
+
+[node name="level_2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(891, 397)
+scale = Vector2(195.5, 62.5)
+texture = SubResource("CanvasTexture_ip7ae")
+
+[node name="level_3" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(917, 547)
+scale = Vector2(195.5, 62.5)
+texture = SubResource("CanvasTexture_ip7ae")
