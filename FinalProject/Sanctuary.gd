@@ -12,6 +12,7 @@ func _ready():
 	$Penguin.play("idle")
 	$Bear.play("idle")
 	print(characters)
+	print(dict["levelscomplete"])
 	for sprite in characters:
 		if sprite == "wolf":
 			$Wolf.show()
