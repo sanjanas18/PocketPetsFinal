@@ -20,7 +20,7 @@ func _on_area_2d_body_entered(body):
 		nodeone.show()
 		nodetwo.show()
 		animation.play("typing")
-		await get_tree().create_timer(4.0).timeout
+		await get_tree().create_timer(7.0).timeout
 		nodetwo.hide()
 		nodeone.hide()
 		

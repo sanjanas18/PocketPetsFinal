@@ -15,6 +15,8 @@ var moveable = true
 func _ready():
 	$RightAttack.monitoring = false
 	$LeftAttack.monitoring = false
+	$BottomAttack.monitoring = false
+	$TopAttack.monitoring = false
 	$Sprite.play(character_to_use + "_idle")
 	
 	
@@ -27,6 +29,8 @@ func switch_to(new_state: State):
 	state_time = 0.0
 	$RightAttack.monitoring = false
 	$LeftAttack.monitoring = false
+	$BottomAttack.monitoring = false
+	$TopAttack.monitoring = false
 	if new_state == State.MOVE:
 		update_movement_animation()
 	elif new_state == State.IDLE:
@@ -34,6 +38,8 @@ func switch_to(new_state: State):
 	elif new_state == State.ATTACK:
 		$RightAttack.monitoring = true
 		$LeftAttack.monitoring = true
+		$BottomAttack.monitoring = true
+		$TopAttack.monitoring = true
 		$Sprite.frame = 0
 		if lastmovedir.x > 0:
 			$Sprite.play(character_to_use + "_attack")
@@ -149,7 +155,7 @@ func _on_sprite_animation_finished():
 
 
 func _on_right_attack_body_entered(body):
-	print("about to attack")
+	#print("about to attack")
 	if curstate == State.ATTACK and body != self:
 		print("in attack mode by enemy")
 		if body is Enemy:
@@ -160,7 +166,7 @@ func _on_right_attack_body_entered(body):
 
 
 func _on_left_attack_body_entered(body):
-	print("about to attack")
+	#print("about to attack")
 	if curstate == State.ATTACK and body != self:
 		print("in attack mode by enemy")
 		if body is Enemy:
@@ -168,5 +174,25 @@ func _on_left_attack_body_entered(body):
 			
 
 
+
+
 func _on_dead_pressed():
 	get_tree().change_scene_to_file("res://MainMenu.tscn")
+
+
+func _on_bottom_attack_body_entered(body):
+	#print("about to attack")
+	if curstate == State.ATTACK and body != self:
+		print("in attack mode by enemy")
+		if body is Enemy:
+			body.hit()
+
+
+
+
+func _on_top_attack_body_entered(body):
+	print("about to attack from boto")
+	if curstate == State.ATTACK and body != self:
+		print("in attack mode by enemy")
+		if body is Enemy:
+			body.hit()

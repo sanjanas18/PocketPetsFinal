@@ -1261,7 +1261,7 @@ size = Vector2(357, 112.288)
 [sub_resource type="CanvasTexture" id="CanvasTexture_jlc3v"]
 
 [sub_resource type="Animation" id="Animation_dks3q"]
-length = 0.001
+length = 4.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1380,7 +1380,7 @@ scale = Vector2(0.4, 0.32)
 position = Vector2(1297, 390)
 
 [node name="Fox" parent="." instance=ExtResource("15_h07b8")]
-position = Vector2(612, -208)
+position = Vector2(232, -662)
 scale = Vector2(5.72822, 5.59141)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Fox"]
@@ -1396,7 +1396,7 @@ autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("5_kjgnn")]
-position = Vector2(956, -210)
+position = Vector2(63, -505)
 scale = Vector2(5, 5.754)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -1513,6 +1513,10 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_b605f")
 
 [node name="enemy_two2" parent="." instance=ExtResource("14_kggja")]
 position = Vector2(3285, 1710)
+
+[node name="EnemyOne5" parent="." instance=ExtResource("12_a214w")]
+position = Vector2(400, 215)
+scale = Vector2(0.279999, 0.427141)
 
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]

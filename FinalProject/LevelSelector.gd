@@ -7,6 +7,9 @@ func _ready():
 	var dict = JSON.parse_string(load_file.get_as_text())
 	var levels = dict["levelscomplete"]
 	var index = 1
+	if levels == 0:
+		var lvloen = get_node("level_1")
+		lvloen.show()
 	while index <= levels:
 		print(index)
 		#show the level
@@ -29,3 +32,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+
+func _on_level_one_button_pressed():
+	get_tree().change_scene_to_file("res://Levels/LevelOne.tscn")

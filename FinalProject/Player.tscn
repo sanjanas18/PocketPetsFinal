@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bg5ii57p67r7i"]
+[gd_scene load_steps=26 format=3 uid="uid://bg5ii57p67r7i"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4il6o"]
 [ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="1_17ypy"]
@@ -121,6 +121,10 @@ radius = 9.21053
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlnxw"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptfow"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0np3c"]
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_4il6o")
 
@@ -147,6 +151,23 @@ position = Vector2(-6, -1)
 scale = Vector2(0.9068, 1.02683)
 shape = SubResource("CircleShape2D_xlnxw")
 
+[node name="BottomAttack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomAttack"]
+position = Vector2(0, 10)
+scale = Vector2(1.07959, -1.28267)
+shape = SubResource("CircleShape2D_ptfow")
+debug_color = Color(0, 0.278431, 0.701961, 0.419608)
+
+[node name="TopAttack" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopAttack"]
+position = Vector2(1, -9)
+scale = Vector2(-0.93898, 0.918236)
+shape = SubResource("CircleShape2D_0np3c")
+
 [connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="body_entered" from="RightAttack" to="." method="_on_right_attack_body_entered"]
 [connection signal="body_entered" from="LeftAttack" to="." method="_on_left_attack_body_entered"]
+[connection signal="body_entered" from="BottomAttack" to="." method="_on_bottom_attack_body_entered"]
+[connection signal="body_entered" from="TopAttack" to="." method="_on_top_attack_body_entered"]

@@ -42,7 +42,7 @@ func _on_wolf_equip_pressed():
 
 func _on_levels_pressed():
 	
-	get_tree().change_scene_to_file("res://Levels/LevelOne.tscn")
+	get_tree().change_scene_to_file("res://LevelSelector.tscn")
 	
 
 
