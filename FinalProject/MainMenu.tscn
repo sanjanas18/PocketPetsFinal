@@ -36,4 +36,12 @@ offset_bottom = 86.7588
 text = "Pocket Pets"
 scroll_active = false
 
+[node name="Reset" type="Button" parent="."]
+offset_left = 153.0
+offset_top = 134.0
+offset_right = 231.0
+offset_bottom = 158.0
+text = "RESET"
+
 [connection signal="pressed" from="Sanctuary" to="." method="_on_sanctuary_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
