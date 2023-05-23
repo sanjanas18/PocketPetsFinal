@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bl63j1n7escbu"]
+[gd_scene load_steps=3 format=3 uid="uid://bl63j1n7escbu"]
 
 [ext_resource type="Script" path="res://LevelSelector.gd" id="1_kaeiw"]
+[ext_resource type="Texture2D" uid="uid://baa3h0jpyrgjs" path="res://art/background.jpeg" id="2_6f8bl"]
 
 [node name="LevelSelector" type="Node2D"]
 script = ExtResource("1_kaeiw")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(573, 323)
+scale = Vector2(1.92798, 1.94426)
+texture = ExtResource("2_6f8bl")
