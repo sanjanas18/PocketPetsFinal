@@ -3,7 +3,7 @@ extends CharacterBody2D
 func _ready():
 	$AnimatedSprite2D.play("idle")
 	var nodetwo = get_node("../Player/boxtext")
-	nodetwo.text = "BEWARE of Enemies Beyond, SAVE the CREATURE if you may. ESCAPE you must, FIND the GEM to continue your day."
+	#nodetwo.text = "BEWARE of Enemies Beyond, SAVE the CREATURE if you may. ESCAPE you must, FIND the GEM to continue your day."
 
 
 
