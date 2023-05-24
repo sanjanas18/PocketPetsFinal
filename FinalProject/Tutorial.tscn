@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b20jaeswsb1i8"]
+[gd_scene load_steps=35 format=3 uid="uid://b20jaeswsb1i8"]
 
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="1_xtofv"]
 [ext_resource type="Texture2D" uid="uid://dflcppqnxjon3" path="res://art/Mystic Woods Asset Pack/tilesets/decor_16x16.png" id="2_2kq1w"]
@@ -11,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://bptujr2ql605l" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Grass tiles v.2.png" id="9_vatod"]
 [ext_resource type="Texture2D" uid="uid://b3viwqs7ra5ts" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Grass hill tiles v.2.png" id="10_ykvx6"]
 [ext_resource type="Texture2D" uid="uid://67w4rcdq4ypq" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Grass.png" id="11_4vx51"]
+[ext_resource type="PackedScene" uid="uid://cy0jp5bl6lbnh" path="res://fox.tscn" id="12_jl6bv"]
+[ext_resource type="PackedScene" uid="uid://bg5ii57p67r7i" path="res://Player.tscn" id="13_y7diw"]
+[ext_resource type="FontFile" uid="uid://qjyvjm0817lt" path="res://art/04B_30__.TTF" id="14_pj30t"]
+[ext_resource type="Texture2D" uid="uid://dr0l3fu2uv4wj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T143437.375.png" id="15_mrvvp"]
+[ext_resource type="Texture2D" uid="uid://c2isbnmls0jrw" path="res://art/Sprout Lands - Sprites - Basic pack/pawprintborder.jpg" id="16_0tsqc"]
+[ext_resource type="Texture2D" uid="uid://yvxya0yjudrj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T153108.164.png" id="17_emoxp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("1_xtofv")
@@ -1240,6 +1246,48 @@ sources/8 = SubResource("TileSetAtlasSource_1brdk")
 sources/9 = SubResource("TileSetAtlasSource_228nj")
 sources/10 = SubResource("TileSetAtlasSource_j2uxk")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_vojeh"]
+
+[sub_resource type="Animation" id="Animation_dks3q"]
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boxtext:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_f8jjs"]
+resource_name = "typing"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("boxtext:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bv48s"]
+_data = {
+"RESET": SubResource("Animation_dks3q"),
+"typing": SubResource("Animation_f8jjs")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_su3xc"]
+texture = ExtResource("17_emoxp")
+
 [node name="Tutorial" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1264,3 +1312,125 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array(65559, 131073, 4, 131095, 131073, 4, 131096, 131073, 4, 131097, 131073, 4, 196633, 131073, 4, 196634, 131073, 4, 196635, 131073, 4, -458747, 131073, 4, -393211, 131073, 4, -327675, 131073, 4, -262139, 131073, 4, -262138, 131073, 4, -262137, 131073, 4, -327672, 131073, 4, -393207, 131073, 4, -393206, 131073, 4, -327670, 131073, 4, -262134, 131073, 4, -262133, 131073, 4, -262132, 131073, 4, -262131, 131073, 4, -262130, 131073, 4, -196594, 131073, 4, -196593, 131073, 4, -196592, 131073, 4, -262128, 131073, 4, -262127, 131073, 4, -327663, 131073, 4, -393185, 6, 6, -327649, 6, 6, -262113, 6, 6, -196577, 6, 6, -131041, 6, 6, -131040, 6, 6, -131039, 6, 6, -196575, 6, 6, -65503, 6, 6, -65502, 6, 6, -65501, 6, 6, -65500, 6, 6, 1114171, 6, 6, 983105, 6, 6, 393281, 196609, 3, 262211, 196609, 3, 65603, 196609, 3, 65600, 196609, 3, 524356, 196609, 3, 196678, 196609, 3, -327612, 196609, 3, 655396, 6, 6, 786463, 6, 6, 983072, 393224, 1, 589855, 6, 6, 524309, 6, 6, 524310, 6, 6, 917523, 6, 6, 917524, 6, 6, 786445, 6, 6, 786446, 6, 6, 589831, 6, 6, 589832, 6, 6, 786434, 6, 6, 786435, 6, 6, 983040, 6, 6, 983041, 6, 6, 983075, 1, 4, 983076, 65537, 4, 983077, 131073, 4, 983078, 196609, 4, 1048611, 1, 4, 1048612, 65537, 4, 1048613, 131073, 4, 1048614, 196609, 4, 1114152, 1, 4, 1114153, 65537, 4, 1114154, 131073, 4, 1114155, 196609, 4, 1179688, 1, 4, 1179689, 65537, 4, 1179690, 131073, 4, 1179691, 196609, 4, 1245224, 1, 4, 1245225, 65537, 4, 1245226, 131073, 4, 1245227, 196609, 4, 1310760, 1, 4, 1310761, 65537, 4, 1310762, 131073, 4, 1310763, 196609, 4, 1376296, 1, 4, 1376297, 65537, 4, 1376298, 131073, 4, 1376299, 196609, 4, 1441832, 1, 4, 1441833, 65537, 4, 1441834, 131073, 4, 1441835, 196609, 4, 1507368, 1, 4, 1507369, 65537, 4, 1507370, 131073, 4, 1507371, 196609, 4, 1179699, 65545, 3, 1179700, 131081, 3, 1179701, 196617, 3, 1245235, 65545, 4, 1245236, 131081, 4, 1245237, 196617, 4, 1310771, 65545, 5, 1310772, 131081, 5, 1310773, 196617, 5, 1376307, 6, 6, 1376308, 6, 6, 1376309, 6, 6, 1376310, 196614, 4, 1376311, 262150, 4, 1376312, 6, 6, 1441846, 196614, 5, 1441847, 262150, 5, 1441848, 6, 6, 1310774, 196614, 3, 1310775, 262150, 3, 1310776, 6, 6, 1245238, 196614, 2, 1245239, 262150, 2, 1245240, 6, 6, 1179702, 196614, 1, 1179703, 262150, 1, 1179704, 6, 6, 1114166, 196614, 0, 1114167, 262150, 0, 1114168, 6, 6, 1245258, 65540, 7, 1245259, 131076, 7, 1245260, 196612, 7, 1376259, 6, 6, 1376260, 6, 6, 1376261, 6, 6, 786471, 6, 6, 852002, 6, 6, 1703971, 327688, 1, 1703967, 327688, 1, 1835047, 327688, 1, 1572903, 196616, 3, 1310780, 6, 6, 1376313, 6, 6, 1572920, 6, 6, 1572919, 262150, 1, 2818081, 6, 6, 2818080, 6, 6, 2752544, 6, 6, 2752543, 6, 6, 2818079, 6, 6, 2818078, 6, 6, 2883614, 6, 6, 2883615, 6, 6, 2883616, 6, 6, 2883617, 6, 6, 1769484, 6, 6, 2031631, 6, 6, 2818058, 6, 6, 2818055, 6, 6, 2883591, 6, 6, 2818059, 6, 6, 2752526, 6, 6, 2359383, 196616, 5, 2359384, 262152, 5, 2359385, 196616, 5, 2359386, 262152, 5, 2359387, 196616, 5, 2359388, 262152, 5, 2359389, 196616, 5, 2359390, 196616, 5, 2359391, 262152, 5, 2424927, 262152, 6, 2424926, 196616, 6, 2490462, 196616, 5, 2424925, 196616, 6, 2424924, 262152, 6, 2424923, 196616, 6, 2424922, 262152, 6, 2424921, 196616, 6, 2424920, 262152, 6, 2424919, 196616, 6, 2687069, 262152, 6, 2687065, 262152, 6, 2818139, 262152, 6, 2818140, 196616, 6, 3080281, 262152, 6, 3014750, 262152, 6, 2949212, 196616, 6, 3145820, 196616, 5, 2949214, 262152, 5, 2949208, 196616, 6, 2818136, 196616, 6, 3211351, 196616, 6, 2555991, 262152, 6, 2687063, 262152, 6, 2818131, 6, 6, 3014737, 6, 6, 2555985, 6, 6, 2621503, 6, 6, 2555971, 6, 6, 2818107, 6, 6, 2883640, 6, 6, 1507382, 196614, 0, 1572918, 196614, 1, 1638454, 196614, 2, 1703990, 196614, 3, 1769526, 196614, 4, 1835062, 196614, 5, 1507383, 262150, 0, 1638455, 262150, 2, 1703991, 262150, 3, 1769527, 262150, 4, 1835063, 262150, 5, 1900598, 196614, 0, 1966134, 196614, 1, 2031670, 196614, 2, 2097206, 196614, 3, 2162742, 196614, 4, 2228278, 196614, 5, 1900599, 262150, 0, 1966135, 262150, 1, 2031671, 262150, 2, 2097207, 262150, 3, 2162743, 262150, 4, 2228279, 262150, 5, 1179707, 6, 6, -131038, 6, 6, 458800, 6, 3, 524336, 6, 4, 589872, 6, 5, 458801, 65542, 3, 589873, 65542, 5, 458802, 131078, 3, 524338, 131078, 4, 589874, 131078, 5, -983040, 6, 3, -917504, 6, 4, -851968, 6, 5, -983039, 65542, 3, -851967, 65542, 5, -983038, 131078, 3, -917502, 131078, 4, -851966, 131078, 5, -982972, 6, 3, -917436, 6, 4, -851900, 6, 5, -982971, 65542, 3, -851899, 65542, 5, -982970, 131078, 3, -917434, 131078, 4, -851898, 131078, 5, 1441828, 327688, 1, 1507364, 327688, 2, 1441829, 393224, 1, 1507365, 393224, 2, 1769507, 327688, 2, 1703972, 393224, 1, 1769508, 393224, 2, 1769503, 327688, 2, 1703968, 393224, 1, 1769504, 393224, 2, 1900583, 327688, 2, 1835048, 393224, 1, 1900584, 393224, 2, 983071, 327688, 1, 1048607, 327688, 2, 1048608, 393224, 2, 2555998, 196616, 6, 2490463, 262152, 5, 2555999, 262152, 6, 2490460, 196616, 5, 2555996, 196616, 6, 2490461, 262152, 5, 2555997, 262152, 6, 2621532, 196616, 5, 2687068, 196616, 6, 2621533, 262152, 5, 2490458, 196616, 5, 2555994, 196616, 6, 2490459, 262152, 5, 2555995, 262152, 6, 2490456, 196616, 5, 2555992, 196616, 6, 2490457, 262152, 5, 2555993, 262152, 6, 2621528, 196616, 5, 2687064, 196616, 6, 2621529, 262152, 5, 2621526, 196616, 5, 2687062, 196616, 6, 2621527, 262152, 5, 2752600, 196616, 5, 2752601, 262152, 5, 2818137, 262152, 6, 2490454, 196616, 5, 2555990, 196616, 6, 2490455, 262152, 5, 2883672, 196616, 5, 2883673, 262152, 5, 2949209, 262152, 6, 3014744, 196616, 5, 3080280, 196616, 6, 3014745, 262152, 5, 3014746, 196616, 5, 3080282, 196616, 6, 3014747, 262152, 5, 3080283, 262152, 6, 2883674, 196616, 5, 2949210, 196616, 6, 2883675, 262152, 5, 2949211, 262152, 6, 2883676, 196616, 5, 2883677, 262152, 5, 2949213, 196616, 5, 2752604, 196616, 5, 2752605, 262152, 5, 2818141, 262152, 6, 2752602, 196616, 5, 2818138, 196616, 6, 2752603, 262152, 5, 3014748, 196616, 5, 3080284, 196616, 6, 3014749, 196616, 6, 3080285, 262152, 6, 3080286, 196616, 6, 3014751, 262152, 5, 3080287, 262152, 6, 3211356, 196616, 6, 3145821, 262152, 5, 3211357, 262152, 6, 3145815, 196616, 5, 3145816, 262152, 5, 3211352, 262152, 6, 3211348, 196616, 5, 3276884, 196616, 6, 3211349, 262152, 5, 3276885, 262152, 6)
+
+[node name="Fox" parent="." instance=ExtResource("12_jl6bv")]
+position = Vector2(401, -243)
+scale = Vector2(6.34376, 6.31504)
+
+[node name="Player" parent="." instance=ExtResource("13_y7diw")]
+position = Vector2(63, -505)
+scale = Vector2(5, 5.754)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Health" type="RichTextLabel" parent="Player"]
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
+offset_left = -112.8
+offset_top = -54.9183
+offset_right = -17.8
+offset_bottom = -14.9183
+scale = Vector2(0.483474, 0.389551)
+theme_override_fonts/normal_font = ExtResource("14_pj30t")
+text = "HP: 100"
+scroll_active = false
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="DeadScreen" type="Sprite2D" parent="Player"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-0.799984, 1.21655)
+scale = Vector2(234, 115.398)
+texture = SubResource("CanvasTexture_vojeh")
+
+[node name="Dead" type="Button" parent="Player"]
+visible = false
+offset_left = -60.4
+offset_top = 6.77789
+offset_right = 66.6
+offset_bottom = 37.7779
+theme_override_fonts/font = ExtResource("14_pj30t")
+text = "Main Menu"
+
+[node name="DeadText" type="RichTextLabel" parent="Player"]
+visible = false
+modulate = Color(0.847059, 0.0313726, 0.247059, 1)
+offset_left = -95.8
+offset_top = -48.1404
+offset_right = 22.2
+offset_bottom = -26.1404
+scale = Vector2(1.84776, 2.27868)
+theme_override_fonts/normal_font = ExtResource("14_pj30t")
+text = "You died"
+scroll_active = false
+
+[node name="Inventory" type="RichTextLabel" parent="Player"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -29.6
+offset_top = -54.9183
+offset_right = 152.4
+offset_bottom = -31.9183
+scale = Vector2(0.445689, 0.333967)
+theme_override_fonts/normal_font = ExtResource("14_pj30t")
+text = "Inventory: "
+scroll_active = false
+autowrap_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="box" type="Sprite2D" parent="Player"]
+visible = false
+position = Vector2(16.0133, 33.6176)
+scale = Vector2(0.539082, 0.300671)
+texture = ExtResource("15_mrvvp")
+
+[node name="boxtext" type="RichTextLabel" parent="Player"]
+visible = false
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
+offset_left = -111.2
+offset_top = 26.764
+offset_right = 355.8
+offset_bottom = 96.764
+scale = Vector2(0.480018, 0.331253)
+theme_override_fonts/normal_font = ExtResource("14_pj30t")
+text = "BEWARE of Enemies Beyond, SAVE the CREATURE if you may. ESCAPE you must, FIND the GEM to continue your day"
+scroll_active = false
+visible_characters = 0
+visible_ratio = 0.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_bv48s")
+}
+
+[node name="WinScreen" type="Sprite2D" parent="Player"]
+visible = false
+position = Vector2(0.230339, -0.0830029)
+scale = Vector2(0.246318, 0.17299)
+texture = ExtResource("16_0tsqc")
+
+[node name="WinText" type="RichTextLabel" parent="Player"]
+visible = false
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
+offset_left = -88.8
+offset_top = -37.0177
+offset_right = 191.2
+offset_bottom = -0.0177231
+scale = Vector2(0.635628, 0.729023)
+theme_override_fonts/normal_font = ExtResource("14_pj30t")
+text = "You passed Level One!"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="WinButton" type="Button" parent="Player"]
+visible = false
+offset_left = -81.8
+offset_top = -10.6013
+offset_right = 88.2
+offset_bottom = 25.3987
+scale = Vector2(1.05798, 1.05466)
+theme_override_fonts/font = ExtResource("14_pj30t")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_su3xc")
+
+[connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
