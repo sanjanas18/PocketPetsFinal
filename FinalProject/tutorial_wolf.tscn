@@ -1,0 +1,111 @@
+[gd_scene load_steps=19 format=3 uid="uid://djlxrhr2bxne"]
+
+[ext_resource type="Script" path="res://TutorialWolf.gd" id="1_cdc0i"]
+[ext_resource type="Texture2D" uid="uid://mog86x5qjlby" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile000.png" id="2_i2ihj"]
+[ext_resource type="Texture2D" uid="uid://kg8x2aqn3ofq" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile001.png" id="3_t6v04"]
+[ext_resource type="Texture2D" uid="uid://ctyoj76vcihdl" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile002.png" id="4_48fme"]
+[ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="5_o7f0l"]
+[ext_resource type="Texture2D" uid="uid://bs2ja0ed40xo7" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile001.png" id="6_7hd6c"]
+[ext_resource type="Texture2D" uid="uid://cjn0ftj43i8jk" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile002.png" id="7_agdon"]
+[ext_resource type="Texture2D" uid="uid://byhy246p7uxbf" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile003.png" id="8_c8qpn"]
+[ext_resource type="Texture2D" uid="uid://c3ctgats8cedw" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile000.png" id="9_xde7u"]
+[ext_resource type="Texture2D" uid="uid://d1damnsuoumkm" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile001.png" id="10_3fb1q"]
+[ext_resource type="Texture2D" uid="uid://cxfab3jk8ycdj" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile002.png" id="11_c03yy"]
+[ext_resource type="Texture2D" uid="uid://cdr7ibspi1hiu" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile003.png" id="12_dlrfq"]
+[ext_resource type="Texture2D" uid="uid://b8ahe02sp5xn5" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile000.png" id="13_gc15j"]
+[ext_resource type="Texture2D" uid="uid://dw1uslm3fof20" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile001.png" id="14_77i8x"]
+[ext_resource type="Texture2D" uid="uid://pb54pg7r3eku" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile002.png" id="15_j77u2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ikpl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_i2ihj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t6v04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_48fme")
+}],
+"loop": false,
+"name": &"wolf_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_o7f0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7hd6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_agdon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_c8qpn")
+}],
+"loop": true,
+"name": &"wolf_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xde7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3fb1q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_c03yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dlrfq")
+}],
+"loop": false,
+"name": &"wolf_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_gc15j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_77i8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_j77u2")
+}],
+"loop": false,
+"name": &"wolf_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_10pdv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80aw6"]
+
+[node name="TutorialWolf" type="CharacterBody2D"]
+position = Vector2(-3, -1)
+script = ExtResource("1_cdc0i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(624, -635)
+scale = Vector2(4.53333, 3.93333)
+sprite_frames = SubResource("SpriteFrames_2ikpl")
+animation = &"wolf_idle"
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(636, -641)
+scale = Vector2(5.78785, -7.01519)
+shape = SubResource("CircleShape2D_10pdv")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(644, -638)
+scale = Vector2(-8.11164, 8.37606)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_80aw6")
+debug_color = Color(0, 0.160784, 0.192157, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

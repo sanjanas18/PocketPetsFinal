@@ -25,7 +25,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pb8ly"]
-radius = 10.8112
+radius = 7.02321
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qreds"]
 
@@ -47,7 +47,7 @@ frame_progress = 0.736645
 position = Vector2(2, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 5)
+position = Vector2(-2, 6)
 scale = Vector2(1.57359, 1.47439)
 shape = SubResource("CircleShape2D_pb8ly")
 

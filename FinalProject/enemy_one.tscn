@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dddtxp35farln" path="res://art/skeleton/tile029.png" id="14_whp6d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ttglu"]
-radius = 5.77142
+radius = 7.78501
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mdx3h"]
 animations = [{
@@ -109,14 +109,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qa63l"]
-radius = 5.95369
+radius = 8.92194
 
 [node name="EnemyOne" instance=ExtResource("1_ci71a")]
 script = ExtResource("2_wkn7r")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(4, 160)
-scale = Vector2(-18.8933, 18.9448)
+scale = Vector2(-18.1333, 18.9448)
 shape = SubResource("CircleShape2D_ttglu")
 debug_color = Color(0, 0.396078, 0.701961, 0.419608)
 
@@ -126,6 +126,7 @@ animation = &"enemy_one_dead"
 
 [node name="Attack2D" type="Area2D" parent="." index="2"]
 position = Vector2(-18, 152)
+scale = Vector2(1.36, 1.36)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack2D" index="0"]
 position = Vector2(20, 0)
