@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b20jaeswsb1i8"]
+[gd_scene load_steps=56 format=3 uid="uid://b20jaeswsb1i8"]
 
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="1_xtofv"]
 [ext_resource type="Texture2D" uid="uid://dflcppqnxjon3" path="res://art/Mystic Woods Asset Pack/tilesets/decor_16x16.png" id="2_2kq1w"]
@@ -25,6 +25,11 @@
 [ext_resource type="Texture2D" uid="uid://ctlt42r3uif5e" path="res://art/minideer/tile002.png" id="24_tdxhe"]
 [ext_resource type="Texture2D" uid="uid://bm75ne21ovmyi" path="res://art/minideer/tile003.png" id="25_wxiqc"]
 [ext_resource type="PackedScene" uid="uid://d2rmns61pqkjn" path="res://enemy_one.tscn" id="26_d50iy"]
+[ext_resource type="Script" path="res://Boar.gd" id="27_nli7l"]
+[ext_resource type="Texture2D" uid="uid://c32q0bod8ktad" path="res://art/board/tile000.png" id="28_c8ifx"]
+[ext_resource type="Texture2D" uid="uid://c3lbai1rjyik1" path="res://art/board/tile001.png" id="29_n00vu"]
+[ext_resource type="Texture2D" uid="uid://cvnqsmwgjjga3" path="res://art/board/tile002.png" id="30_ic4cf"]
+[ext_resource type="Texture2D" uid="uid://hwwtr1wmsr5c" path="res://art/board/tile003.png" id="31_kjjax"]
 [ext_resource type="Texture2D" uid="uid://btr53dxrvhrh5" path="res://art/Objects/image-removebg-preview - 2023-05-09T103236.695.png" id="35_yk0gp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
@@ -1284,7 +1289,7 @@ radius = 26.7836
 [sub_resource type="CanvasTexture" id="CanvasTexture_vojeh"]
 
 [sub_resource type="Animation" id="Animation_dks3q"]
-length = 4.5
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1325,6 +1330,30 @@ texture = ExtResource("17_emoxp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pd4sa"]
 size = Vector2(357, 112.288)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2c8n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_33n65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_c8ifx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_n00vu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ic4cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kjjax")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_btlse"]
 
 [node name="Tutorial" type="Node2D"]
 
@@ -1462,6 +1491,7 @@ visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+speed_scale = 0.34
 libraries = {
 "": SubResource("AnimationLibrary_bv48s")
 }
@@ -1518,5 +1548,25 @@ texture = ExtResource("35_yk0gp")
 position = Vector2(1249, -695)
 scale = Vector2(-0.48, 0.4)
 
+[node name="Boar" type="CharacterBody2D" parent="."]
+position = Vector2(460, -755)
+scale = Vector2(6.02349, 5.8235)
+script = ExtResource("27_nli7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boar"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_y2c8n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boar"]
+sprite_frames = SubResource("SpriteFrames_33n65")
+animation = &"idle"
+
+[node name="Area2D" type="Area2D" parent="Boar"]
+position = Vector2(0, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boar/Area2D"]
+shape = SubResource("CircleShape2D_btlse")
+
 [connection signal="body_entered" from="Deer/Area2D" to="Deer" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
+[connection signal="body_entered" from="Boar/Area2D" to="Boar" method="_on_area_2d_body_entered"]
