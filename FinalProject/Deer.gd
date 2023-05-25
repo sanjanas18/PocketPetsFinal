@@ -9,7 +9,8 @@ func _ready():
 func _on_area_2d_body_entered(body):
 	if body is Player:
 		var nodetwo = get_node("../Player/boxtext")
-		nodetwo.text = "In every level from now on, there will be an animal you can save. Simply go up to them and attack the cage."
+		nodetwo.text = "Every level has an animal you can save. Simply go up to the cage. They will appear in the sanctuary after."
+		
 		print("in")
 	
 	

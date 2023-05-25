@@ -1382,7 +1382,7 @@ layer_2/tile_data = PackedInt32Array(65559, 131073, 4, 131095, 131073, 4, 131096
 
 [node name="Fox" parent="." instance=ExtResource("12_jl6bv")]
 position = Vector2(325, -179)
-scale = Vector2(6.34376, 6.31504)
+scale = Vector2(-7.57624, 6.31504)
 
 [node name="gem" parent="." instance=ExtResource("19_wioby")]
 position = Vector2(814, -311)
@@ -1491,7 +1491,7 @@ visible_ratio = 0.0
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
-speed_scale = 0.34
+speed_scale = 0.5
 libraries = {
 "": SubResource("AnimationLibrary_bv48s")
 }
