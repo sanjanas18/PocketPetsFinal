@@ -10,6 +10,8 @@ func _ready():
 	if levels == 0:
 		var lvloen = get_node("level_1")
 		lvloen.show()
+		var firstpaw = get_node("Pawprints_1")
+		firstpaw.show()
 	while index <= levels:
 		print(index)
 		var currentpaw = get_node("Pawprints_" + str(index))
@@ -47,3 +49,8 @@ func _on_level_one_button_pressed():
 
 func _on_tutorial_button_pressed():
 	get_tree().change_scene_to_file("res://Tutorial.tscn")
+
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://MainMenu.tscn")

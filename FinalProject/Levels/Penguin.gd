@@ -71,17 +71,17 @@ func track():
 	
 	
 	if direction == 1:
-		print("up")
+	
 		$AnimatedSprite2D.play(current + "_up")
 	elif direction == 2:
-		print("right")
+		
 		$AnimatedSprite2D.play(current + "_right")
 		$AnimatedSprite2D.flip_h = false
 	elif direction == 3:
-		print("down")
+		
 		$AnimatedSprite2D.play(current + "_down")
 	elif direction == 4:
-		print("left")
+		
 		$AnimatedSprite2D.play(current + "_right")
 		$AnimatedSprite2D.flip_h = true
 	else:
