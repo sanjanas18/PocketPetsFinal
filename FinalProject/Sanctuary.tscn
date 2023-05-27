@@ -1,22 +1,30 @@
-[gd_scene load_steps=16 format=3 uid="uid://cd0d7bky84v8d"]
+[gd_scene load_steps=18 format=3 uid="uid://cd0d7bky84v8d"]
 
 [ext_resource type="Script" path="res://Sanctuary.gd" id="1_gwgc8"]
 [ext_resource type="Texture2D" uid="uid://ce5cncng30eea" path="res://art/Objects/backgroundshelf.jpeg" id="1_y75x2"]
 [ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="2_eppea"]
 [ext_resource type="Texture2D" uid="uid://bs2ja0ed40xo7" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile001.png" id="3_1xf5t"]
+[ext_resource type="Texture2D" uid="uid://cedomkibtgvvh" path="res://art/AnimalsIdrew/Bear/bearidlereal/tile000.png" id="3_ngk8o"]
+[ext_resource type="Texture2D" uid="uid://8wmpesfwn5d3" path="res://art/AnimalsIdrew/Bear/bearidlereal/tile001.png" id="4_mvt1x"]
 [ext_resource type="Texture2D" uid="uid://cjn0ftj43i8jk" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile002.png" id="4_r8vj3"]
+[ext_resource type="Texture2D" uid="uid://cq0nyfronrbb2" path="res://art/AnimalsIdrew/Bear/bearidlereal/tile002.png" id="5_jutlf"]
 [ext_resource type="Texture2D" uid="uid://byhy246p7uxbf" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile003.png" id="5_yea8f"]
 [ext_resource type="Texture2D" uid="uid://defecegvaoikb" path="res://art/AnimalsIdrew/Penguin/Idle/tile000.png" id="6_df4ne"]
 [ext_resource type="Texture2D" uid="uid://dpsjntwi8uui7" path="res://art/AnimalsIdrew/Penguin/Idle/tile001.png" id="7_22kk8"]
 [ext_resource type="Texture2D" uid="uid://ccaymltxvtem8" path="res://art/AnimalsIdrew/Penguin/Idle/tile002.png" id="8_0tv5g"]
 [ext_resource type="Texture2D" uid="uid://eb075gaexbv6" path="res://art/AnimalsIdrew/Penguin/Idle/tile003.png" id="9_65bdq"]
-[ext_resource type="Texture2D" uid="uid://dhy5hpdpda3ov" path="res://art/AnimalsIdrew/Bear/BearFront/tile000.png" id="11_xh8gs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3j5wo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_xh8gs")
+"texture": ExtResource("3_ngk8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mvt1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jutlf")
 }],
 "loop": true,
 "name": &"idle",
@@ -78,9 +86,17 @@ texture = ExtResource("1_y75x2")
 visible = false
 position = Vector2(578.125, 234.031)
 rotation = 3.14159
-scale = Vector2(3.2102, -2.94361)
+scale = Vector2(6.16885, -5.11137)
 sprite_frames = SubResource("SpriteFrames_3j5wo")
 animation = &"idle"
+
+[node name="Bear Equip" type="Button" parent="Bear"]
+offset_left = 13.7992
+offset_top = 16.0365
+offset_right = 65.7992
+offset_bottom = 47.0365
+scale = Vector2(-0.459104, 0.257184)
+text = "Equip"
 
 [node name="Wolf" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -139,6 +155,7 @@ text = "the wolf is equipped"
 scroll_active = false
 autowrap_mode = 0
 
+[connection signal="pressed" from="Bear/Bear Equip" to="." method="_on_bear_equip_pressed"]
 [connection signal="pressed" from="Wolf/Wolf Equip" to="." method="_on_wolf_equip_pressed"]
 [connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="EquipClose" to="." method="_on_equip_close_pressed"]

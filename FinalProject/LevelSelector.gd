@@ -36,3 +36,11 @@ func _process(delta):
 
 func _on_level_one_button_pressed():
 	get_tree().change_scene_to_file("res://Levels/LevelOne.tscn")
+	
+	
+	
+	
+
+
+func _on_tutorial_button_pressed():
+	get_tree().change_scene_to_file("res://Tutorial.tscn")

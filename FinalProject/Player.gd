@@ -50,7 +50,7 @@ func switch_to(new_state: State):
 			#$Sprite.speed_scale = 0.5
 			$Sprite.flip_h = true
 		elif lastmovedir.y >0:
-			$Sprite.play(character_to_use + "_front")
+			$Sprite.play(character_to_use + "_frontattack")
 		elif lastmovedir.y < 0:
 			$Sprite.play(character_to_use + "_back")
 	if new_state == State.DEAD:
@@ -98,7 +98,7 @@ func _physics_process(delta):
 		dir.y = 1	
 		switch_to(State.MOVE)
 		inputon = true
-	elif Input.is_action_pressed("ui_left") and moveable == true:
+	if Input.is_action_pressed("ui_left") and moveable == true:
 		dir.x = -1	
 		switch_to(State.MOVE)
 		inputon = true

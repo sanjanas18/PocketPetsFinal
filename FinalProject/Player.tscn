@@ -1,27 +1,137 @@
-[gd_scene load_steps=26 format=3 uid="uid://bg5ii57p67r7i"]
+[gd_scene load_steps=49 format=3 uid="uid://bg5ii57p67r7i"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4il6o"]
 [ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="1_17ypy"]
 [ext_resource type="Texture2D" uid="uid://xm54cq3t7nl" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile000.png" id="1_esats"]
 [ext_resource type="Texture2D" uid="uid://b8ahe02sp5xn5" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile000.png" id="1_so31y"]
+[ext_resource type="Texture2D" uid="uid://b5x5cmvxnroo1" path="res://art/AnimalsIdrew/Bear/BearRightReal/tile000.png" id="2_3r2yn"]
+[ext_resource type="Texture2D" uid="uid://iu12lf5a01a5" path="res://art/AnimalsIdrew/Bear/bearfrontreal/tile000.png" id="2_6y3il"]
 [ext_resource type="Texture2D" uid="uid://dw1uslm3fof20" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile001.png" id="2_18va0"]
+[ext_resource type="Texture2D" uid="uid://cpioc3abeh8sy" path="res://art/AnimalsIdrew/Bear/bearattackrea;/tile000.png" id="2_25jht"]
+[ext_resource type="Texture2D" uid="uid://cedomkibtgvvh" path="res://art/AnimalsIdrew/Bear/bearidlereal/tile000.png" id="2_a8tip"]
 [ext_resource type="Texture2D" uid="uid://bs2ja0ed40xo7" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile001.png" id="2_il41q"]
 [ext_resource type="Texture2D" uid="uid://dgpq5e0ou47nh" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile001.png" id="2_rpvw2"]
+[ext_resource type="Texture2D" uid="uid://8wmpesfwn5d3" path="res://art/AnimalsIdrew/Bear/bearidlereal/tile001.png" id="3_0qkfq"]
 [ext_resource type="Texture2D" uid="uid://cjn0ftj43i8jk" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile002.png" id="3_1on4p"]
 [ext_resource type="Texture2D" uid="uid://dwt1oq31ojmsr" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile002.png" id="3_2w08l"]
+[ext_resource type="Texture2D" uid="uid://dt006atsr27un" path="res://art/AnimalsIdrew/Bear/bearattackrea;/tile001.png" id="3_iesth"]
+[ext_resource type="Texture2D" uid="uid://3unc8l6g88kc" path="res://art/AnimalsIdrew/Bear/bearfrontreal/tile001.png" id="3_u01xw"]
 [ext_resource type="Texture2D" uid="uid://pb54pg7r3eku" path="res://art/AnimalsIdrew/Wolf/WolfBackwards/tile002.png" id="3_vgbsi"]
+[ext_resource type="Texture2D" uid="uid://jfqn3yuoay37" path="res://art/AnimalsIdrew/Bear/BearRightReal/tile001.png" id="3_xg6lx"]
+[ext_resource type="Texture2D" uid="uid://dfp1by7dy1khv" path="res://art/AnimalsIdrew/Bear/BearRightReal/tile002.png" id="4_6f0di"]
 [ext_resource type="Texture2D" uid="uid://mog86x5qjlby" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile000.png" id="4_aeds7"]
+[ext_resource type="Texture2D" uid="uid://c07s6jmvny6qq" path="res://art/AnimalsIdrew/Bear/bearattackrea;/tile002.png" id="4_e7iap"]
 [ext_resource type="Texture2D" uid="uid://ix2kbony7k6s" path="res://art/AnimalsIdrew/Wolf/WolfAttack/tile003.png" id="4_ltnsu"]
 [ext_resource type="Texture2D" uid="uid://byhy246p7uxbf" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile003.png" id="4_mg6r1"]
+[ext_resource type="Texture2D" uid="uid://dsbrkgv7u4rn0" path="res://art/AnimalsIdrew/Bear/bearfrontreal/tile002.png" id="4_xbph6"]
+[ext_resource type="Texture2D" uid="uid://cq0nyfronrbb2" path="res://art/AnimalsIdrew/Bear/bearidlereal/tile002.png" id="4_xlwtg"]
+[ext_resource type="Texture2D" uid="uid://7ywh4h501uk1" path="res://art/AnimalsIdrew/Bear/BearAttackRIght/tile000.png" id="5_3gm2b"]
 [ext_resource type="Texture2D" uid="uid://c3ctgats8cedw" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile000.png" id="5_8jdk2"]
 [ext_resource type="Texture2D" uid="uid://kg8x2aqn3ofq" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile001.png" id="5_jc00q"]
+[ext_resource type="Texture2D" uid="uid://8ae0m2uy8mmm" path="res://art/AnimalsIdrew/Bear/bearbackreal/tile000.png" id="5_qlky4"]
+[ext_resource type="Texture2D" uid="uid://drkj2fbp8na00" path="res://art/AnimalsIdrew/Bear/bearbackreal/tile001.png" id="6_6vg8i"]
 [ext_resource type="Texture2D" uid="uid://ctyoj76vcihdl" path="res://art/AnimalsIdrew/Wolf/WolfFrontRun/tile002.png" id="6_osr2l"]
+[ext_resource type="Texture2D" uid="uid://ctps78fjyb1k4" path="res://art/AnimalsIdrew/Bear/BearAttackRIght/tile001.png" id="6_tq6l8"]
 [ext_resource type="Texture2D" uid="uid://d1damnsuoumkm" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile001.png" id="6_w2t10"]
+[ext_resource type="Texture2D" uid="uid://dek1hijcljdlg" path="res://art/AnimalsIdrew/Bear/BearAttackRIght/tile002.png" id="7_1aa2m"]
 [ext_resource type="Texture2D" uid="uid://cxfab3jk8ycdj" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile002.png" id="7_dgadg"]
+[ext_resource type="Texture2D" uid="uid://buwv28sr8rw21" path="res://art/AnimalsIdrew/Bear/bearbackreal/tile002.png" id="7_idmj6"]
+[ext_resource type="Texture2D" uid="uid://dd5f81dsmk7cn" path="res://art/AnimalsIdrew/Bear/BearAttackRIght/tile003.png" id="8_hsbik"]
 [ext_resource type="Texture2D" uid="uid://cdr7ibspi1hiu" path="res://art/AnimalsIdrew/Wolf/WolfRight/tile003.png" id="8_omkg1"]
+[ext_resource type="Texture2D" uid="uid://d1w1q71lg24oc" path="res://art/AnimalsIdrew/Wolf/WolfFrontAttack/tile000.png" id="12_5eppm"]
+[ext_resource type="Texture2D" uid="uid://2ymxw6p3ykkv" path="res://art/AnimalsIdrew/Wolf/WolfFrontAttack/tile001.png" id="13_70pma"]
+[ext_resource type="Texture2D" uid="uid://28phs53u4dkl" path="res://art/AnimalsIdrew/Wolf/WolfFrontAttack/tile002.png" id="14_ph5ai"]
+[ext_resource type="Texture2D" uid="uid://dsmkb5xwahk5a" path="res://art/AnimalsIdrew/Wolf/WolfFrontAttack/tile003.png" id="15_nckxj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ylqck"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_25jht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iesth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e7iap")
+}],
+"loop": false,
+"name": &"bear_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qlky4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6vg8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_idmj6")
+}],
+"loop": false,
+"name": &"bear_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6y3il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u01xw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xbph6")
+}],
+"loop": false,
+"name": &"bear_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3gm2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tq6l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1aa2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hsbik")
+}],
+"loop": false,
+"name": &"bear_frontattack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_a8tip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0qkfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xlwtg")
+}],
+"loop": true,
+"name": &"bear_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3r2yn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xg6lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6f0di")
+}],
+"loop": false,
+"name": &"bear_right",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_esats")
@@ -71,6 +181,23 @@ animations = [{
 }],
 "loop": false,
 "name": &"wolf_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_5eppm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_70pma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ph5ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nckxj")
+}],
+"loop": false,
+"name": &"wolf_frontattack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -132,7 +259,7 @@ script = ExtResource("1_4il6o")
 position = Vector2(-1, -4.76837e-07)
 scale = Vector2(0.7, 0.633333)
 sprite_frames = SubResource("SpriteFrames_ylqck")
-animation = &"wolf_back"
+animation = &"wolf_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ewdls")

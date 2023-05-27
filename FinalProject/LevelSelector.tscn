@@ -18,7 +18,7 @@ texture = ExtResource("2_6f8bl")
 
 [node name="level_1" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(156, 110)
+position = Vector2(153, 218)
 scale = Vector2(0.48522, 0.460635)
 texture = ExtResource("3_0aivy")
 
@@ -43,7 +43,7 @@ scale = Vector2(30.0468, -29.7818)
 [node name="level_2" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 0.960784, 1, 1)
-position = Vector2(319, 373)
+position = Vector2(353, 484)
 scale = Vector2(0.523556, 0.494056)
 texture = ExtResource("3_0aivy")
 
@@ -66,9 +66,34 @@ texture = SubResource("CanvasTexture_ip7ae")
 
 [node name="Pawprints_2" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(233, 249)
+position = Vector2(248, 360)
 rotation = 1.16732
 scale = Vector2(0.261963, 0.231878)
 texture = ExtResource("5_c61b2")
 
+[node name="Tutorial" type="Sprite2D" parent="."]
+position = Vector2(95, 77)
+scale = Vector2(-0.443415, 0.423562)
+texture = ExtResource("3_0aivy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
+offset_left = 103.74
+offset_top = -28.3312
+offset_right = 222.74
+offset_bottom = 11.6688
+scale = Vector2(-1.95711, 2.50226)
+theme_override_fonts/normal_font = ExtResource("4_ato5g")
+text = "Tutorial"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="TutorialButton" type="Button" parent="Tutorial"]
+modulate = Color(0, 0, 0, 0)
+offset_left = 110.506
+offset_top = -108.603
+offset_right = 118.506
+offset_bottom = -100.603
+scale = Vector2(-27.4654, 26.832)
+
 [connection signal="pressed" from="level_1/LevelOneButton" to="." method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="Tutorial/TutorialButton" to="." method="_on_tutorial_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1drnfoptg2ml"]
+[gd_scene load_steps=29 format=3 uid="uid://c1drnfoptg2ml"]
 
 [ext_resource type="Script" path="res://Levels/LevelTwo.gd" id="1_jewkk"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_gdc5w"]
@@ -8,8 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://cvb6sx0u50vhm" path="res://art/Mystic Woods Asset Pack/tilesets/plains.png" id="6_lwse4"]
 [ext_resource type="Texture2D" uid="uid://clrm7gv3c45pq" path="res://art/Mystic Woods Asset Pack/tilesets/water3.png" id="7_trbc3"]
 [ext_resource type="PackedScene" uid="uid://bg5ii57p67r7i" path="res://Player.tscn" id="8_na6dj"]
+[ext_resource type="Texture2D" uid="uid://c2isbnmls0jrw" path="res://art/Sprout Lands - Sprites - Basic pack/pawprintborder.jpg" id="9_2ps0r"]
 [ext_resource type="PackedScene" uid="uid://wx5gqjh2jxcm" path="res://gem.tscn" id="9_dq3w8"]
+[ext_resource type="FontFile" uid="uid://qjyvjm0817lt" path="res://art/04B_30__.TTF" id="10_1ymwj"]
 [ext_resource type="Texture2D" uid="uid://cwlsm7fgev6ls" path="res://image-removebg-preview - 2023-05-08T124146.033.png" id="10_rr7xi"]
+[ext_resource type="Texture2D" uid="uid://yvxya0yjudrj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T153108.164.png" id="11_odm66"]
 [ext_resource type="PackedScene" uid="uid://cybd5q3xhlmwm" path="res://NewCharacter.tscn" id="11_v7efd"]
 [ext_resource type="Texture2D" uid="uid://btr53dxrvhrh5" path="res://art/Objects/image-removebg-preview - 2023-05-09T103236.695.png" id="12_8p6lu"]
 [ext_resource type="PackedScene" uid="uid://d2rmns61pqkjn" path="res://enemy_one.tscn" id="13_jdcjt"]
@@ -425,6 +428,9 @@ sources/3 = SubResource("TileSetAtlasSource_nsdnf")
 sources/4 = SubResource("TileSetAtlasSource_bpcul")
 sources/5 = SubResource("TileSetAtlasSource_ldyin")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew84v"]
+texture = ExtResource("11_odm66")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d3ovr"]
 size = Vector2(357, 112.288)
 
@@ -501,6 +507,36 @@ scale = Vector2(0.422748, 0.256928)
 text = "Inventory: "
 scroll_active = false
 autowrap_mode = 0
+
+[node name="WinScreen" type="Sprite2D" parent="Player"]
+visible = false
+position = Vector2(21.0974, -52.0213)
+scale = Vector2(0.10413, 0.044446)
+texture = ExtResource("9_2ps0r")
+
+[node name="WinText" type="RichTextLabel" parent="Player"]
+visible = false
+modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
+offset_left = -16.54
+offset_top = -61.5109
+offset_right = 263.46
+offset_bottom = -24.5109
+scale = Vector2(0.635628, 0.729023)
+theme_override_fonts/normal_font = ExtResource("10_1ymwj")
+text = "You passed Level One!"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="WinButton" type="Button" parent="Player"]
+visible = false
+offset_left = -13.5808
+offset_top = -54.7238
+offset_right = 156.419
+offset_bottom = -18.7238
+scale = Vector2(1.05798, 1.05466)
+theme_override_fonts/font = ExtResource("10_1ymwj")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_ew84v")
 
 [node name="gem" parent="." instance=ExtResource("9_dq3w8")]
 position = Vector2(1525, 787)

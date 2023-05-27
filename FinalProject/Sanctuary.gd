@@ -11,8 +11,8 @@ func _ready():
 	$Wolf.play("idle")
 	$Penguin.play("idle")
 	$Bear.play("idle")
-	print(characters)
-	print(dict["levelscomplete"])
+	print("characters right now: " + str(characters))
+	#print(dict["levelscomplete"])
 	for sprite in characters:
 		if sprite == "wolf":
 			$Wolf.show()
@@ -39,6 +39,8 @@ func _on_wolf_equip_pressed():
 	$EquipClose.show()
 	$EquipText.show()
 	$EquipScreen.show()
+	
+
 
 func _on_levels_pressed():
 	
@@ -51,3 +53,16 @@ func _on_equip_close_pressed():
 	$EquipText.hide()
 	$EquipScreen.hide()
 
+
+
+func _on_bear_equip_pressed():
+	var load_file = FileAccess.open("user://savegame.json", FileAccess.READ)
+
+	var dict = JSON.parse_string(load_file.get_as_text())
+	
+	Globals.character_in_use = "bear" # Replace with function body.
+	$EquipText.text = "The Bear is Equipped"
+	$EquipClose.show()
+	$EquipText.show()
+	$EquipScreen.show()
+	print(dict["characters"])
