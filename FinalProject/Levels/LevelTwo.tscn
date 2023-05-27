@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c1drnfoptg2ml"]
+[gd_scene load_steps=30 format=3 uid="uid://c1drnfoptg2ml"]
 
 [ext_resource type="Script" path="res://Levels/LevelTwo.gd" id="1_jewkk"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_gdc5w"]
@@ -428,6 +428,8 @@ sources/3 = SubResource("TileSetAtlasSource_nsdnf")
 sources/4 = SubResource("TileSetAtlasSource_bpcul")
 sources/5 = SubResource("TileSetAtlasSource_ldyin")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_lr405"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ew84v"]
 texture = ExtResource("11_odm66")
 
@@ -479,6 +481,13 @@ scale = Vector2(0.492277, 0.189239)
 text = "Health: 100"
 scroll_active = false
 autowrap_mode = 0
+
+[node name="DeadScreen" type="Sprite2D" parent="Player"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(2.19998, 0.695168)
+scale = Vector2(235.731, 116.772)
+texture = SubResource("CanvasTexture_lr405")
 
 [node name="Dead" type="Button" parent="Player"]
 visible = false
