@@ -12,16 +12,19 @@ func _ready():
 		lvloen.show()
 	while index <= levels:
 		print(index)
+		var currentpaw = get_node("Pawprints_" + str(index))
+		currentpaw.show()
 		#show the level
 		var node = get_node("level_"+str(index))
 		node.show()
 		#print(levels)
 		if index == levels:
-			print(index+1)
+			#print(index+1)
 			var nextindex = index + 1
 			
 			var next = get_node("level_" + str(nextindex))
 			next.show()
+			
 			var nextpaw = get_node("Pawprints_" + str(nextindex))
 			nextpaw.show()
 		#add show the level

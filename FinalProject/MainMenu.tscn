@@ -1,7 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://doeljg4o4r5td"]
+[gd_scene load_steps=12 format=3 uid="uid://doeljg4o4r5td"]
 
-[ext_resource type="Texture2D" uid="uid://ckr5xtf7egmy3" path="res://temporaryart/peachbackground.jpeg" id="1_qoc63"]
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_vl4bd"]
+[ext_resource type="Texture2D" uid="uid://7114kftbytyl" path="res://art/MainMenu.jpg" id="2_hh2a2"]
+[ext_resource type="Texture2D" uid="uid://dksqlg8ocu3eo" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile000.png" id="3_e7dqp"]
+[ext_resource type="FontFile" uid="uid://qjyvjm0817lt" path="res://art/04B_30__.TTF" id="3_j2bvi"]
+[ext_resource type="Texture2D" uid="uid://bs2ja0ed40xo7" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile001.png" id="4_c6ex1"]
+[ext_resource type="Texture2D" uid="uid://cjn0ftj43i8jk" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile002.png" id="5_7plku"]
+[ext_resource type="Texture2D" uid="uid://byhy246p7uxbf" path="res://art/AnimalsIdrew/Wolf/WolfIdle/tile003.png" id="6_bcrgd"]
+[ext_resource type="Texture2D" uid="uid://dh4mijf77v6ka" path="res://art/Play.png" id="8_1r7nk"]
+[ext_resource type="Texture2D" uid="uid://c0exb24idnfw3" path="res://art/image-removebg-preview - 2023-05-27T131535.099.png" id="9_et8k6"]
+[ext_resource type="Texture2D" uid="uid://cclwnjcqhu2n1" path="res://art/image-removebg-preview - 2023-05-27T131849.317.png" id="10_73jve"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3a7kg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e7dqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c6ex1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7plku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bcrgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="MainMenu" type="Node2D"]
 scale = Vector2(2.85322, 1.68952)
@@ -9,39 +37,67 @@ script = ExtResource("1_vl4bd")
 
 [node name="Peachbackground" type="Sprite2D" parent="."]
 position = Vector2(202.593, 185.491)
-scale = Vector2(0.655197, 0.859504)
-texture = ExtResource("1_qoc63")
-
-[node name="Sanctuary" type="Button" parent="."]
-offset_left = 131.0
-offset_top = 185.0
-offset_right = 227.0
-offset_bottom = 216.0
-text = "Sanctuary"
-
-[node name="Levels" type="Button" parent="."]
-visible = false
-offset_left = 128.977
-offset_top = 137.317
-offset_right = 225.977
-offset_bottom = 168.317
-text = "Levels"
+scale = Vector2(0.330365, 0.601481)
+texture = ExtResource("2_hh2a2")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 modulate = Color(0, 0.0470588, 0.0470588, 1)
-offset_left = 118.112
-offset_top = 46.7588
-offset_right = 280.112
-offset_bottom = 86.7588
+offset_left = 41.3568
+offset_top = 29.5942
+offset_right = 235.357
+offset_bottom = 69.5942
+scale = Vector2(1.84069, 4.39392)
+theme_override_fonts/normal_font = ExtResource("3_j2bvi")
+theme_override_font_sizes/normal_font_size = 18
 text = "Pocket Pets"
 scroll_active = false
+autowrap_mode = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(366.847, 356.039)
+rotation = -0.0360678
+scale = Vector2(3.89956, 4.1726)
+sprite_frames = SubResource("SpriteFrames_3a7kg")
+
+[node name="Play" type="Sprite2D" parent="."]
+position = Vector2(202.578, 162.768)
+scale = Vector2(0.338427, 0.5488)
+texture = ExtResource("8_1r7nk")
+
+[node name="Levels" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 124.07
+offset_top = 133.766
+offset_right = 221.07
+offset_bottom = 164.766
+scale = Vector2(1.64395, 1.76555)
+
+[node name="SanctuarySprite" type="Sprite2D" parent="."]
+position = Vector2(203.279, 249.775)
+scale = Vector2(0.34258, 0.582482)
+texture = ExtResource("9_et8k6")
+
+[node name="Sanctuary" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = 124.421
+offset_top = 211.303
+offset_right = 220.421
+offset_bottom = 242.303
+scale = Vector2(1.675, 1.86164)
+
+[node name="Image-removebg-preview-2023-05-27t131849317" type="Sprite2D" parent="."]
+position = Vector2(201.877, 317.842)
+scale = Vector2(0.223285, 0.33534)
+texture = ExtResource("10_73jve")
 
 [node name="Reset" type="Button" parent="."]
-offset_left = 153.0
-offset_top = 134.0
-offset_right = 231.0
-offset_bottom = 158.0
-text = "RESET"
+modulate = Color(1, 1, 1, 0)
+offset_left = 145.8
+offset_top = 298.31
+offset_right = 223.8
+offset_bottom = 329.31
+scale = Vector2(1.37489, 1.26064)
 
+[connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Sanctuary" to="." method="_on_sanctuary_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

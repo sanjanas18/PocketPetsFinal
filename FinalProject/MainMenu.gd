@@ -4,7 +4,7 @@ var levels_done = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$AnimatedSprite2D.play("default")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,3 +24,10 @@ func _on_reset_pressed():
 		"levelscomplete" : levels_done}
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.WRITE)
 	save_file.store_string(JSON.stringify(dict))
+	
+	
+
+
+
+func _on_levels_pressed():
+	get_tree().change_scene_to_file("res://LevelSelector.tscn")

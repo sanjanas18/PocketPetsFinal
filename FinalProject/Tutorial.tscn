@@ -1534,19 +1534,19 @@ modulate = Color(0.00392157, 0.00392157, 0.00392157, 1)
 offset_left = -88.8
 offset_top = -37.0177
 offset_right = 191.2
-offset_bottom = -0.0177231
+offset_bottom = -0.0177383
 scale = Vector2(0.635628, 0.729023)
 theme_override_fonts/normal_font = ExtResource("14_pj30t")
-text = "You passed Level One!"
+text = "You are now prepared for the real world!"
 scroll_active = false
-autowrap_mode = 0
+autowrap_mode = 2
 
 [node name="WinButton" type="Button" parent="Player"]
 visible = false
-offset_left = -81.8
-offset_top = -10.6013
-offset_right = 88.2
-offset_bottom = 25.3987
+offset_left = -86.2
+offset_top = -1.91171
+offset_right = 83.8
+offset_bottom = 34.0883
 scale = Vector2(1.05798, 1.05466)
 theme_override_fonts/font = ExtResource("14_pj30t")
 theme_override_font_sizes/font_size = 8
@@ -1599,5 +1599,6 @@ shape = SubResource("CircleShape2D_btlse")
 
 [connection signal="body_entered" from="Deer/Area2D" to="Deer" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
+[connection signal="pressed" from="Player/WinButton" to="." method="_on_win_button_pressed"]
 [connection signal="body_entered" from="DoneTrigger" to="." method="_on_done_trigger_body_entered"]
 [connection signal="body_entered" from="Boar/Area2D" to="Boar" method="_on_area_2d_body_entered"]

@@ -21,3 +21,9 @@ func _on_done_trigger_body_entered(body):
 		WinScreen.show()
 		WinText.show()
 		WinButton.show()
+
+
+
+
+func _on_win_button_pressed():
+	get_tree().change_scene_to_file("res:/MainMenu.tscn")
