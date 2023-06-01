@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://c1drnfoptg2ml"]
+[gd_scene load_steps=61 format=3 uid="uid://c1drnfoptg2ml"]
 
 [ext_resource type="Script" path="res://Levels/LevelTwo.gd" id="1_jewkk"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="2_gdc5w"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://ctlt42r3uif5e" path="res://art/minideer/tile002.png" id="31_a1viy"]
 [ext_resource type="Texture2D" uid="uid://bm75ne21ovmyi" path="res://art/minideer/tile003.png" id="32_byfno"]
 [ext_resource type="Texture2D" uid="uid://cb8aldvsilwkd" path="res://art/star.png" id="33_wojcv"]
+[ext_resource type="Texture2D" uid="uid://ciasxb8vs4mlj" path="res://art/image-removebg-preview - 2023-05-27T122458.377.png" id="34_h0u26"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_gdc5w")
@@ -3157,6 +3158,16 @@ scale = Vector2(1.05798, 1.05466)
 theme_override_fonts/font = ExtResource("10_1ymwj")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_kqg4y")
+
+[node name="exl1" type="Sprite2D" parent="."]
+position = Vector2(3410, 2191)
+scale = Vector2(0.11327, 0.0986802)
+texture = ExtResource("34_h0u26")
+
+[node name="exl2" type="Sprite2D" parent="."]
+position = Vector2(2276, 1227)
+scale = Vector2(0.193327, 0.209198)
+texture = ExtResource("34_h0u26")
 
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
