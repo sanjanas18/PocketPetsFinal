@@ -1426,6 +1426,12 @@ scroll_active = false
 autowrap_mode = 0
 metadata/_edit_use_anchors_ = true
 
+[node name="Star" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(4077, 2090)
+scale = Vector2(0.813889, 0.827778)
+texture = ExtResource("31_55w7t")
+
 [node name="Player" parent="." instance=ExtResource("5_kjgnn")]
 position = Vector2(63, -505)
 scale = Vector2(5, 5.754)
@@ -1592,12 +1598,6 @@ texture = ExtResource("30_1okqg")
 position = Vector2(818, 470)
 scale = Vector2(0.145789, 0.175633)
 texture = ExtResource("30_1okqg")
-
-[node name="Star" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.513726)
-position = Vector2(4077, 2090)
-scale = Vector2(0.813889, 0.827778)
-texture = ExtResource("31_55w7t")
 
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]

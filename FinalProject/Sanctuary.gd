@@ -66,6 +66,7 @@ func _on_bear_equip_pressed():
 	$EquipText.text = "The Bear is Equipped"
 	$EquipClose.show()
 	$EquipText.show()
+	$Close.show()
 	$EquipScreen.show()
 	print(dict["characters"])
 
