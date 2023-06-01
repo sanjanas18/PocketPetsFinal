@@ -3039,6 +3039,16 @@ shape = SubResource("CircleShape2D_vwffl")
 position = Vector2(0.352112, 13.0768)
 shape = SubResource("CircleShape2D_2gegr")
 
+[node name="exl1" type="Sprite2D" parent="."]
+position = Vector2(3410, 2191)
+scale = Vector2(0.11327, 0.0986802)
+texture = ExtResource("34_h0u26")
+
+[node name="exl2" type="Sprite2D" parent="."]
+position = Vector2(2276, 1227)
+scale = Vector2(0.193327, 0.209198)
+texture = ExtResource("34_h0u26")
+
 [node name="Player" parent="." instance=ExtResource("8_na6dj")]
 position = Vector2(3917, 2068)
 scale = Vector2(5, 5.754)
@@ -3158,16 +3168,6 @@ scale = Vector2(1.05798, 1.05466)
 theme_override_fonts/font = ExtResource("10_1ymwj")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_kqg4y")
-
-[node name="exl1" type="Sprite2D" parent="."]
-position = Vector2(3410, 2191)
-scale = Vector2(0.11327, 0.0986802)
-texture = ExtResource("34_h0u26")
-
-[node name="exl2" type="Sprite2D" parent="."]
-position = Vector2(2276, 1227)
-scale = Vector2(0.193327, 0.209198)
-texture = ExtResource("34_h0u26")
 
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
