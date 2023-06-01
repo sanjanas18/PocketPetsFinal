@@ -23,7 +23,8 @@ func _ready():
 
 
 	
-
+#switching function between moving, idling and attacking
+#minitoring helps this one bug where sometimes it doesn't attack
 func switch_to(new_state: State):
 	curstate = new_state
 	state_time = 0.0

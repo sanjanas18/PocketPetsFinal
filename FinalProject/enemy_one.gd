@@ -9,7 +9,7 @@ func hit():
 	print("hit enemy")
 	switch_to(State.DEAD)
 	
-	# Called when your enemy is hit, you probably want to implement it
+
 
 func _ready():
 	pass
@@ -52,7 +52,7 @@ func _on_attack_2d_body_entered(body):
 		print("in attack mode by enemy")
 		if body is Player:
 			body.onHit()
-			#IMPLEMENT HIT FOR PLAYER
+		
 
 	
 
@@ -60,7 +60,7 @@ func _on_attack_2d_body_entered(body):
 func _on_animated_sprite_2d_animation_finished():
 	if curstate == State.ATTACK:
 		switch_to(State.IDLE)
-	#do the same for the other states
+
 	if curstate == State.DEAD:
 		self.queue_free()
 
