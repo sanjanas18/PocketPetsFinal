@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://b20jaeswsb1i8"]
+[gd_scene load_steps=60 format=3 uid="uid://b20jaeswsb1i8"]
 
 [ext_resource type="Script" path="res://Tutorial.gd" id="1_fgxlb"]
 [ext_resource type="Texture2D" uid="uid://dpks8odrhpm6f" path="res://art/Mystic Woods Asset Pack/tilesets/decor_8x8.png" id="1_xtofv"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnqsmwgjjga3" path="res://art/board/tile002.png" id="30_ic4cf"]
 [ext_resource type="Texture2D" uid="uid://hwwtr1wmsr5c" path="res://art/board/tile003.png" id="31_kjjax"]
 [ext_resource type="Texture2D" uid="uid://ciasxb8vs4mlj" path="res://art/image-removebg-preview - 2023-05-27T122458.377.png" id="32_pntxd"]
+[ext_resource type="Texture2D" uid="uid://cb8aldvsilwkd" path="res://art/star.png" id="34_wsjon"]
 [ext_resource type="Texture2D" uid="uid://btr53dxrvhrh5" path="res://art/Objects/image-removebg-preview - 2023-05-09T103236.695.png" id="35_yk0gp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
@@ -1434,6 +1435,12 @@ texture = ExtResource("32_pntxd")
 position = Vector2(1249, -695)
 rotation = 3.14159
 scale = Vector2(0.48, -0.4)
+
+[node name="Star" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.486275)
+position = Vector2(1720, -810)
+scale = Vector2(0.726388, 0.576389)
+texture = ExtResource("34_wsjon")
 
 [node name="Player" parent="." instance=ExtResource("13_y7diw")]
 position = Vector2(63, -505)

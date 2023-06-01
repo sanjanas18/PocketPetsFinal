@@ -196,3 +196,7 @@ func _on_top_attack_body_entered(body):
 		print("in attack mode by enemy")
 		if body is Enemy:
 			body.hit()
+
+
+func _on_win_button_pressed():
+	get_tree().change_scene_to_file("res://MainMenu.tscn")

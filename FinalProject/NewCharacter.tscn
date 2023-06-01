@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cybd5q3xhlmwm"]
+[gd_scene load_steps=27 format=3 uid="uid://cybd5q3xhlmwm"]
 
 [ext_resource type="Script" path="res://Levels/Penguin.gd" id="1_hml4c"]
 [ext_resource type="Texture2D" uid="uid://iu12lf5a01a5" path="res://art/AnimalsIdrew/Bear/bearfrontreal/tile000.png" id="2_eloqm"]
@@ -17,6 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://8ae0m2uy8mmm" path="res://art/AnimalsIdrew/Bear/bearbackreal/tile000.png" id="11_q4vg3"]
 [ext_resource type="Texture2D" uid="uid://drkj2fbp8na00" path="res://art/AnimalsIdrew/Bear/bearbackreal/tile001.png" id="12_0a7v3"]
 [ext_resource type="Texture2D" uid="uid://buwv28sr8rw21" path="res://art/AnimalsIdrew/Bear/bearbackreal/tile002.png" id="13_xgf8a"]
+[ext_resource type="Texture2D" uid="uid://dwnbqie7d1tgt" path="res://art/AnimalsIdrew/Penguin/right/tile000.png" id="18_3m4qw"]
+[ext_resource type="Texture2D" uid="uid://cdeq207ddw2bp" path="res://art/AnimalsIdrew/Penguin/right/tile001.png" id="19_7i23w"]
+[ext_resource type="Texture2D" uid="uid://c5y4n82a4pamu" path="res://art/AnimalsIdrew/Penguin/right/tile002.png" id="20_1n0ml"]
+[ext_resource type="Texture2D" uid="uid://cf5f10qlf32ca" path="res://art/AnimalsIdrew/Penguin/back/tile000.png" id="21_ul78f"]
+[ext_resource type="Texture2D" uid="uid://bgc716jtnipou" path="res://art/AnimalsIdrew/Penguin/back/tile001.png" id="22_ktqps"]
+[ext_resource type="Texture2D" uid="uid://buxcsw6p4lyhm" path="res://art/AnimalsIdrew/Penguin/back/tile002.png" id="23_uoy8y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lb4ad"]
 animations = [{
@@ -117,16 +123,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y3ir5")
+"texture": ExtResource("18_3m4qw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_su4bo")
+"texture": ExtResource("19_7i23w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_qmrc5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_74fu4")
+"texture": ExtResource("20_1n0ml")
 }],
 "loop": true,
 "name": &"Penguin_right",
@@ -134,16 +137,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y3ir5")
+"texture": ExtResource("21_ul78f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_su4bo")
+"texture": ExtResource("22_ktqps")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_qmrc5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_74fu4")
+"texture": ExtResource("23_uoy8y")
 }],
 "loop": true,
 "name": &"Penguin_up",

@@ -31,3 +31,7 @@ func _on_win_trigger_body_entered(body):
 
 func _on_win_button_pressed():
 	get_tree().change_scene_to_file("res://MainMenu.tscn")
+
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://MainMenu.tscn")

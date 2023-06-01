@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bhi38t4t5wm25"]
+[gd_scene load_steps=54 format=3 uid="uid://bhi38t4t5wm25"]
 
 [ext_resource type="Texture2D" uid="uid://birjpgyo5x16e" path="res://art/Mystic Woods Asset Pack/tilesets/grass.png" id="1_lxs1e"]
 [ext_resource type="Script" path="res://Levels/LevelOne.gd" id="1_oitqn"]
@@ -24,6 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://dr0l3fu2uv4wj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T143437.375.png" id="22_phxwb"]
 [ext_resource type="Texture2D" uid="uid://c2isbnmls0jrw" path="res://art/Sprout Lands - Sprites - Basic pack/pawprintborder.jpg" id="23_83kg5"]
 [ext_resource type="Texture2D" uid="uid://yvxya0yjudrj" path="res://art/Sprout Lands - Sprites - Basic pack/image-removebg-preview - 2023-05-18T153108.164.png" id="24_mm3k4"]
+[ext_resource type="Script" path="res://Levels/Deer2.gd" id="25_vddja"]
+[ext_resource type="Texture2D" uid="uid://cncwbmi1t3tsu" path="res://art/minideer/tile000.png" id="26_wesbc"]
+[ext_resource type="Texture2D" uid="uid://cbdb8hwxyhqn1" path="res://art/minideer/tile001.png" id="27_xn46o"]
+[ext_resource type="Texture2D" uid="uid://ctlt42r3uif5e" path="res://art/minideer/tile002.png" id="28_j83un"]
+[ext_resource type="Texture2D" uid="uid://bm75ne21ovmyi" path="res://art/minideer/tile003.png" id="29_i0m2l"]
+[ext_resource type="Texture2D" uid="uid://ciasxb8vs4mlj" path="res://art/image-removebg-preview - 2023-05-27T122458.377.png" id="30_1okqg"]
+[ext_resource type="Texture2D" uid="uid://cb8aldvsilwkd" path="res://art/star.png" id="31_55w7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0wyv"]
 texture = ExtResource("2_5xpyq")
@@ -1300,6 +1307,30 @@ _data = {
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b605f"]
 texture = ExtResource("24_mm3k4")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_qtmp0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_wesbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_xn46o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_j83un")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_i0m2l")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3t6oh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6p5sb"]
+
 [node name="LevelOne" type="Node2D"]
 script = ExtResource("1_oitqn")
 
@@ -1512,6 +1543,16 @@ theme_override_fonts/font = ExtResource("21_ywsfu")
 theme_override_font_sizes/font_size = 8
 theme_override_styles/normal = SubResource("StyleBoxTexture_b605f")
 
+[node name="MainMenu" type="Button" parent="Player"]
+offset_left = 75.0
+offset_top = 47.0
+offset_right = 111.0
+offset_bottom = 56.0
+scale = Vector2(1.05798, 1.05466)
+theme_override_fonts/font = ExtResource("21_ywsfu")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxTexture_b605f")
+
 [node name="enemy_two2" parent="." instance=ExtResource("14_kggja")]
 position = Vector2(3285, 1710)
 
@@ -1519,6 +1560,47 @@ position = Vector2(3285, 1710)
 position = Vector2(400, 215)
 scale = Vector2(0.279999, 0.427141)
 
+[node name="Deer2" type="CharacterBody2D" parent="."]
+position = Vector2(811, 526)
+scale = Vector2(5.79131, 5.18083)
+script = ExtResource("25_vddja")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Deer2"]
+sprite_frames = SubResource("SpriteFrames_qtmp0")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deer2"]
+position = Vector2(0.188492, 7.74124)
+shape = SubResource("CircleShape2D_3t6oh")
+
+[node name="Area2D" type="Area2D" parent="Deer2"]
+position = Vector2(3.77045, 9.03145)
+rotation = 3.14159
+scale = Vector2(1.33944, -1.03244)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Deer2/Area2D"]
+position = Vector2(3, -1)
+shape = SubResource("CircleShape2D_6p5sb")
+debug_color = Color(0, 0.00784314, 0.701961, 0.419608)
+
+[node name="excl" type="Sprite2D" parent="."]
+position = Vector2(211, -783)
+scale = Vector2(0.145789, 0.175633)
+texture = ExtResource("30_1okqg")
+
+[node name="excl2" type="Sprite2D" parent="."]
+position = Vector2(818, 470)
+scale = Vector2(0.145789, 0.175633)
+texture = ExtResource("30_1okqg")
+
+[node name="Star" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.513726)
+position = Vector2(4077, 2090)
+scale = Vector2(0.813889, 0.827778)
+texture = ExtResource("31_55w7t")
+
 [connection signal="body_entered" from="WinTrigger" to="." method="_on_win_trigger_body_entered"]
 [connection signal="pressed" from="Player/Dead" to="Player" method="_on_dead_pressed"]
 [connection signal="pressed" from="Player/WinButton" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="Player/MainMenu" to="." method="_on_win_button_pressed"]
+[connection signal="body_entered" from="Deer2/Area2D" to="Deer2" method="_on_area_2d_body_entered"]

@@ -16,6 +16,7 @@ func _on_area_2d_body_entered(body):
 		var nodeone = get_node("../Player/box")
 		var nodetwo = get_node("../Player/boxtext")
 		var animation = get_node("../Player/AnimationPlayer")
+		nodetwo.text = "Welcome to the Maze. Escape you must, find the gem. Escapes are marked with a star."
 		print(nodeone)
 		nodeone.show()
 		nodetwo.show()
