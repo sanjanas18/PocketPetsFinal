@@ -39,6 +39,7 @@ func _on_wolf_equip_pressed():
 	$EquipClose.show()
 	$EquipText.show()
 	$EquipScreen.show()
+	$Close.show()
 	
 
 
@@ -52,6 +53,7 @@ func _on_equip_close_pressed():
 	$EquipClose.hide()
 	$EquipText.hide()
 	$EquipScreen.hide()
+	$Close.hide()
 
 
 
@@ -66,3 +68,7 @@ func _on_bear_equip_pressed():
 	$EquipText.show()
 	$EquipScreen.show()
 	print(dict["characters"])
+
+
+func _on_main_menu_button_pressed():
+	get_tree().change_scene_to_file("res://MainMenu.tscn")

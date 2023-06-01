@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 enum State {IDLE, MOVE, ATTACK, DEAD} #add attack SOON!
 var curstate = State.IDLE
-var speed = 5
+var speed = 8
 var lastmovedir: Vector2 = Vector2.ZERO
 var lastdir: Vector2 = Vector2.ZERO
 var state_time = 0.0

@@ -3045,11 +3045,12 @@ scale = Vector2(5, 5.754)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="Health" type="RichTextLabel" parent="Player"]
-offset_left = -107.2
-offset_top = -52.1376
-offset_right = -12.2
-offset_bottom = -12.1376
-scale = Vector2(0.492277, 0.189239)
+offset_left = -111.0
+offset_top = -54.0493
+offset_right = 40.9999
+offset_bottom = -26.0493
+scale = Vector2(0.495388, 0.324672)
+theme_override_fonts/normal_font = ExtResource("10_1ymwj")
 text = "Health: 100"
 scroll_active = false
 autowrap_mode = 0
@@ -3080,11 +3081,12 @@ text = "You died"
 scroll_active = false
 
 [node name="Inventory" type="RichTextLabel" parent="Player"]
-offset_left = 21.0
-offset_top = -52.0
-offset_right = 203.0
-offset_bottom = -29.0
-scale = Vector2(0.422748, 0.256928)
+offset_left = 7.3999
+offset_top = -53.8756
+offset_right = 245.4
+offset_bottom = -30.8756
+scale = Vector2(0.447835, 0.385144)
+theme_override_fonts/normal_font = ExtResource("10_1ymwj")
 text = "Inventory: "
 scroll_active = false
 autowrap_mode = 0

@@ -57,6 +57,14 @@ theme_override_fonts/normal_font = ExtResource("4_ato5g")
 text = "Level Two"
 scroll_active = false
 
+[node name="LevelTwoButton" type="Button" parent="level_2"]
+modulate = Color(0, 0, 0, 0)
+offset_left = -120.331
+offset_top = -111.323
+offset_right = -112.331
+offset_bottom = -103.323
+scale = Vector2(29.5019, 29.01)
+
 [node name="level_3" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(587, 251)
@@ -130,5 +138,6 @@ offset_bottom = 8.0
 scale = Vector2(33.0198, 8.73028)
 
 [connection signal="pressed" from="level_1/LevelOneButton" to="." method="_on_level_one_button_pressed"]
+[connection signal="pressed" from="level_2/LevelTwoButton" to="." method="_on_level_two_button_pressed"]
 [connection signal="pressed" from="Tutorial/TutorialButton" to="." method="_on_tutorial_button_pressed"]
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
