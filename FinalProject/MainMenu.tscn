@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://doeljg4o4r5td"]
+[gd_scene load_steps=14 format=3 uid="uid://doeljg4o4r5td"]
 
 [ext_resource type="Script" path="res://MainMenu.gd" id="1_vl4bd"]
 [ext_resource type="Texture2D" uid="uid://7114kftbytyl" path="res://art/MainMenu.jpg" id="2_hh2a2"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dh4mijf77v6ka" path="res://art/Play.png" id="8_1r7nk"]
 [ext_resource type="Texture2D" uid="uid://c0exb24idnfw3" path="res://art/image-removebg-preview - 2023-05-27T131535.099.png" id="9_et8k6"]
 [ext_resource type="Texture2D" uid="uid://cclwnjcqhu2n1" path="res://art/image-removebg-preview - 2023-05-27T131849.317.png" id="10_73jve"]
+[ext_resource type="Texture2D" uid="uid://c2isbnmls0jrw" path="res://art/Sprout Lands - Sprites - Basic pack/pawprintborder.jpg" id="11_muse7"]
+[ext_resource type="Texture2D" uid="uid://c2lv3inh827og" path="res://art/image-removebg-preview - 2023-05-31T182526.793.png" id="12_syt6r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3a7kg"]
 animations = [{
@@ -98,6 +100,37 @@ offset_right = 223.8
 offset_bottom = 329.31
 scale = Vector2(1.37489, 1.26064)
 
+[node name="ProgressReset" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(200.826, 240.305)
+scale = Vector2(0.235691, 0.358628)
+texture = ExtResource("11_muse7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ProgressReset"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -400.012
+offset_top = -265.716
+offset_right = -234.012
+offset_bottom = -142.716
+scale = Vector2(6.30056, 4.13524)
+theme_override_fonts/normal_font = ExtResource("3_j2bvi")
+text = "Your Progress Has Been Reset!"
+scroll_active = false
+
+[node name="Close" type="Sprite2D" parent="ProgressReset"]
+position = Vector2(-26.7667, 141.935)
+scale = Vector2(1.49115, 1.25267)
+texture = ExtResource("12_syt6r")
+
+[node name="CloseButton" type="Button" parent="ProgressReset"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -397.038
+offset_top = 87.4718
+offset_right = -389.038
+offset_bottom = 95.4718
+scale = Vector2(85.7602, 15.2694)
+
 [connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Sanctuary" to="." method="_on_sanctuary_pressed"]
 [connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="ProgressReset/CloseButton" to="." method="_on_close_button_pressed"]

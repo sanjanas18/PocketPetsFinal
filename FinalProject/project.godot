@@ -23,7 +23,7 @@ Globals="*res://Globals.gd"
 
 window/size/viewport_width=1160
 window/size/viewport_height=655
-window/stretch/aspect="expand"
+window/stretch/mode="viewport"
 
 [input]
 

@@ -20,6 +20,7 @@ func _on_sanctuary_pressed():
 
 
 func _on_reset_pressed():
+	$ProgressReset.show()
 	var dict = {"characters": begginingaray,
 		"levelscomplete" : levels_done}
 	var save_file = FileAccess.open("user://savegame.json", FileAccess.WRITE)
@@ -31,3 +32,7 @@ func _on_reset_pressed():
 
 func _on_levels_pressed():
 	get_tree().change_scene_to_file("res://LevelSelector.tscn")
+
+
+func _on_close_button_pressed():
+	$ProgressReset.hide()
